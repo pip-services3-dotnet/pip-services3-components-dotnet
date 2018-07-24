@@ -1,5 +1,4 @@
-﻿using PipServices.Components.Test.Log;
-using Xunit;
+﻿using Xunit;
 
 namespace PipServices.Components.Log
 {

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.IO;
 
+using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
 
 using YamlDotNet.Serialization;
 
-namespace PipServices.Commons.Config
+namespace PipServices.Components.Config
 {
     /// <summary>
     /// Yaml Config Reader

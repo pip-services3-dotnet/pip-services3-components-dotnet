@@ -1,12 +1,11 @@
 ﻿using PipServices.Commons.Config;
-using PipServices.Components.Connect;
 using PipServices.Commons.Errors;
 using PipServices.Commons.Refer;
 using System;
 using System.Linq;
 using Xunit;
 
-namespace PipServices.Components.Test.Connect
+namespace PipServices.Components.Connect
 {
     //[TestClass]
     public sealed class ConnectionResolverTest

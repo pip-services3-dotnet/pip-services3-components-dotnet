@@ -1,4 +1,6 @@
-﻿namespace PipServices.Commons.Config
+﻿using PipServices.Commons.Config;
+
+namespace PipServices.Components.Config
 {
     /// <summary>
     /// The interface of Config Reader

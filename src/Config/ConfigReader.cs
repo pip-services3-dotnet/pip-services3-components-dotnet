@@ -1,6 +1,7 @@
 ﻿using HandlebarsDotNet;
+using PipServices.Commons.Config;
 
-namespace PipServices.Commons.Config
+namespace PipServices.Components.Config
 {
     /// <summary>
     /// Config reader with parameters

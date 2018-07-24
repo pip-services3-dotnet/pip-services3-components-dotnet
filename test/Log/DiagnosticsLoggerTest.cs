@@ -1,7 +1,6 @@
-﻿using PipServices.Components.Log;
-using Xunit;
+﻿using Xunit;
 
-namespace PipServices.Components.Test.Log
+namespace PipServices.Components.Log
 {
     //[TestClass]
     public sealed class DiagnosticsLoggerTest

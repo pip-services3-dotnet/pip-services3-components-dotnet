@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HandlebarsDotNet;
 using Xunit;
 
-namespace PipServices.Commons.Config
+namespace PipServices.Components.Config
 {
     public class ConfigReaderTest
     {

@@ -2,9 +2,10 @@
 using System.IO;
 
 using PipServices.Commons.Errors;
+using PipServices.Commons.Config;
 using PipServices.Commons.Convert;
 
-namespace PipServices.Commons.Config
+namespace PipServices.Components.Config
 {
     /// <summary>
     /// Json Config Reader

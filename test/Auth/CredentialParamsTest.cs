@@ -1,7 +1,6 @@
 ﻿using Xunit;
-using PipServices.Components.Auth;
 
-namespace PipServices.Components.Test.Auth
+namespace PipServices.Components.Auth
 {
     //[TestClass]
     public sealed class CredentialParamsTest

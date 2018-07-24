@@ -1,9 +1,8 @@
 ﻿using PipServices.Components.Log;
 using PipServices.Commons.Config;
-using PipServices.Components.Count;
 using Xunit;
 
-namespace PipServices.Components.Test.Count
+namespace PipServices.Components.Count
 {
     //[TestClass]
     public sealed class NullCountersTest

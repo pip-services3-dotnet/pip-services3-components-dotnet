@@ -1,7 +1,8 @@
 ﻿using PipServices.Components.Build;
+using PipServices.Commons.Config;
 using PipServices.Commons.Refer;
 
-namespace PipServices.Commons.Config
+namespace PipServices.Components.Config
 {
     public class DefaultConfigReaderFactory: Factory
     {

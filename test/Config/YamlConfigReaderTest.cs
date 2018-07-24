@@ -2,7 +2,7 @@
 
 using Xunit;
 
-namespace PipServices.Components.Test.Config
+namespace PipServices.Components.Config
 {
     //[TestClass]
     public class YamlConfigReaderTest

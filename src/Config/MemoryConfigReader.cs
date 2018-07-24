@@ -1,5 +1,7 @@
 ﻿
-namespace PipServices.Commons.Config
+using PipServices.Commons.Config;
+
+namespace PipServices.Components.Config
 {
     /// <summary>
     /// Memory Config Reader
