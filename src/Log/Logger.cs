@@ -49,9 +49,6 @@ namespace PipServices.Components.Log
 
             while (error != null)
             {
-                if (builder.Length > 0)
-                    builder.Append(" Caused by error: ");
-
                 builder.Append(error.Message)
                     .Append(" StackTrace: ")
                     .Append(error.StackTrace);
