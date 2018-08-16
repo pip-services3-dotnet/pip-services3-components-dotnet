@@ -47,13 +47,17 @@ namespace PipServices.Components.Log
         {
             var builder = new StringBuilder();
 
-            while (error != null)
+            builder.Append(error.Message);
+            
+            if (error.InnerException != null)
             {
-                builder.Append(error.Message)
-                    .Append(" StackTrace: ")
-                    .Append(error.StackTrace);
-
-                error = error.InnerException;
+                builder.Append(" Cause by: ");
+                builder.Append("" + error.InnerException);
+            }
+            if (error.StackTrace != null)
+            {
+                builder..Append(" Stack trace: ");
+                builder.Append(error.StackTrace);
             }
 
             return builder.ToString();
