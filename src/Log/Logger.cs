@@ -48,7 +48,7 @@ namespace PipServices.Components.Log
             var builder = new StringBuilder();
 
             builder.Append(error.Message);
-            
+
             if (error.InnerException != null)
             {
                 builder.Append(" Cause by: ");
@@ -56,7 +56,7 @@ namespace PipServices.Components.Log
             }
             if (error.StackTrace != null)
             {
-                builder..Append(" Stack trace: ");
+                builder.Append(" Stack trace: ");
                 builder.Append(error.StackTrace);
             }
 
