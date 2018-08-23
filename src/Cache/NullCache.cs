@@ -7,7 +7,7 @@ namespace PipServices.Components.Cache
     /// It is primarily used in testing and can be temporarily
     /// used to disable cache for troubleshooting purposes.
     /// </summary>
-    public class NullCache : ICache
+    public class NullCache : AbstractCache
     {
         /// <summary>
         /// Retrieves a value from cache by unique key.
@@ -15,7 +15,7 @@ namespace PipServices.Components.Cache
         /// <param name="correlationId"></param>
         /// <param name="key">Unique key identifying a data object.</param>
         /// <returns>Cached value or null if the value is not found.</returns>
-        public async Task<T> RetrieveAsync<T>(string correlationId, string key)
+        public async override Task<T> RetrieveAsync<T>(string correlationId, string key)
         {
             return await Task.FromResult(default(T));
         }
@@ -28,7 +28,7 @@ namespace PipServices.Components.Cache
         /// <param name="value">The data object to store.</param>
         /// <param name="timeout">Time to live for the object in milliseconds.</param>
         /// <returns>Cached object stored in the cache.</returns>
-        public async Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
+        public async override Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
         {
             return await Task.FromResult(value);
         }
@@ -38,7 +38,7 @@ namespace PipServices.Components.Cache
         /// </summary>
         /// <param name="correlationId"></param>
         /// <param name="key">Unique key identifying the object.</param>
-        public async Task RemoveAsync(string correlationId, string key)
+        public async override Task RemoveAsync(string correlationId, string key)
         {
             await Task.Delay(0);
         }

@@ -11,7 +11,7 @@ namespace PipServices.Components.Cache
     /// <remarks>
     /// This class is thread-safe.
     /// </remarks>
-    public class MemoryCache : ICache, IReconfigurable
+    public class MemoryCache : AbstractCache
     {
         private readonly long DefaultTimeout = 60000;
         private const long DefaultMaxSize = 1000;
@@ -36,17 +36,19 @@ namespace PipServices.Components.Cache
             Timeout = DefaultTimeout;
             MaxSize = DefaultMaxSize;
 
-            if (config != null) Configure(config);
+            if (config != null)
+            {
+                Configure(config);
+            }
         }
 
-        public long Timeout { get; set; }
         public long MaxSize { get; set; }
 
         /// <summary>
         /// Initializes the components according to supplied configuration parameters.
         /// </summary>
         /// <param name="config">Configuration parameters.</param>
-        public void Configure(ConfigParams config)
+        public override void Configure(ConfigParams config)
         {
             Timeout = config.GetAsLongWithDefault("timeout", Timeout);
             MaxSize = config.GetAsLongWithDefault("max_size", MaxSize);
@@ -89,7 +91,7 @@ namespace PipServices.Components.Cache
         /// <param name="correlationId"></param>
         /// <param name="key">Unique key identifying a data object.</param>
         /// <returns>Cached value or null if the value is not found.</returns>
-        public async Task<T> RetrieveAsync<T>(string correlationId, string key)
+        public async override Task<T> RetrieveAsync<T>(string correlationId, string key)
         {
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
@@ -122,7 +124,7 @@ namespace PipServices.Components.Cache
         /// <param name="value">The data object to store.</param>
         /// <param name="timeout">Time to live for the object in milliseconds.</param>
         /// <returns>Cached object stored in the cache.</returns>
-        public async Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
+        public async override Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
         {
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
@@ -158,7 +160,7 @@ namespace PipServices.Components.Cache
         /// </summary>
         /// <param name="correlationId"></param>
         /// <param name="key">Unique key identifying the object.</param>
-        public async Task RemoveAsync(string correlationId, string key)
+        public async override Task RemoveAsync(string correlationId, string key)
         {
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
