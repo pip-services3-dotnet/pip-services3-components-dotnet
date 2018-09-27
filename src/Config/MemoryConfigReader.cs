@@ -4,38 +4,57 @@ using PipServices.Commons.Config;
 namespace PipServices.Components.Config
 {
     /// <summary>
-    /// Memory Config Reader
+    /// Config reader that stores configuration in memory.
+    /// 
+    /// The reader supports parameterization using Handlebars template engine.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// The configuration parameters are the configuration template
     /// </summary>
-    /// <seealso cref="PipServices.Commons.Config.IConfigReader" />
-    /// <seealso cref="PipServices.Commons.Config.IReconfigurable" />
+    /// <example>
+    /// <code>
+    /// var config = ConfigParams.FromTuples(
+    /// "connection.host", "{{SERVICE_HOST}}",
+    /// "connection.port", "{{SERVICE_PORT}}{{^SERVICE_PORT}}8080{{/SERVICE_PORT}}"
+    /// );
+    /// 
+    /// var configReader = new MemoryConfigReader();
+    /// configReader.Configure(config);
+    /// 
+    /// var parameters = ConfigParams.fromValue(process.env);
+    /// configReader.ReadConfig("123", parameters);
+    /// </code>
+    /// </example>
+    /// See <see cref="IConfigReader"/>
     public class MemoryConfigReader : IConfigReader, IReconfigurable
     {
         protected ConfigParams _config = new ConfigParams();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemoryConfigReader"/> class.
+        /// Creates a new instance of config reader.
         /// </summary>
-        /// <param name="config">The configuration.</param>
+        /// <param name="config">(optional) component configuration parameters</param>
         public MemoryConfigReader(ConfigParams config = null)
         {
             _config = config ?? new ConfigParams();
         }
 
         /// <summary>
-        /// Configures the specified configuration.
+        /// Configures component by passing configuration parameters.
         /// </summary>
-        /// <param name="config">The configuration.</param>
+        /// <param name="config">Configures component by passing configuration parameters.</param>
         public virtual void Configure(ConfigParams config)
         {
             _config = config;
         }
 
         /// <summary>
-        /// Reads the configuration.
+        /// Reads configuration and parameterize it with given values.
         /// </summary>
-        /// <param name="correlationId">The correlation identifier.</param>
-        /// <param name="parameters">The parameters.</param>
-        /// <returns></returns>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="parameters">values to parameters the configuration or null to skip parameterization.</param>
+        /// <returns>ConfigParams configuration.</returns>
         public virtual ConfigParams ReadConfig(string correlationId, ConfigParams parameters)
         {
             return new ConfigParams(_config);

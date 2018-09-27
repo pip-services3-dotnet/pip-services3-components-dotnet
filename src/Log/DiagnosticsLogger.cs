@@ -4,8 +4,18 @@ using System.Text;
 
 namespace PipServices.Components.Log
 {
+    /// <summary>
+    /// Diagnostic logger.
+    /// </summary>
     public class DiagnosticsLogger : Logger
     {
+        /// <summary>
+        /// Writes a log message to the logger destination(s).
+        /// </summary>
+        /// <param name="level">a log level.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="error">an error object associated with this message.</param>
+        /// <param name="message">a human-readable message to log.</param>
         protected override void Write(LogLevel level, string correlationId, Exception error, string message)
         {
             if (Level < level) return;

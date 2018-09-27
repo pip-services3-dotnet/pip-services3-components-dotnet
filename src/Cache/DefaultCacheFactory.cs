@@ -4,9 +4,9 @@ using PipServices.Commons.Refer;
 namespace PipServices.Components.Cache
 {
     /// <summary>
-    /// Default factory for cache components
+    /// Creates ICache components by their descriptors.
     /// </summary>
-    /// <seealso cref="PipServices.Components.Build.IFactory" />
+    /// See <see cref="Factory"/>, <see cref="ICache"/>, <see cref="MemoryCache"/>, <see cref="NullCache"/>
     public class DefaultCacheFactory : Factory
     {
         public static Descriptor Descriptor = new Descriptor("pip-services", "factory", "cache", "default", "1.0");
@@ -15,6 +15,9 @@ namespace PipServices.Components.Cache
         public static Descriptor MemoryCacheDescriptor = new Descriptor("pip-services", "cache", "memory", "*", "1.0");
         public static Descriptor MemoryCacheDescriptor2 = new Descriptor("pip-services-commons", "cache", "memory", "*", "1.0");
 
+        /// <summary>
+        /// Create a new instance of the factory.
+        /// </summary>
         public DefaultCacheFactory()
         {
             RegisterAsType(MemoryCacheDescriptor, typeof(MemoryCache));

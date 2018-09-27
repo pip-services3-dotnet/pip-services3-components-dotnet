@@ -3,8 +3,19 @@
 namespace PipServices.Components.Count
 {
     /// <summary>
-    /// Provides callback to end measuring execution time interface and update interval counter.
+    /// Callback object returned by <see cref="ICounters.BeginTiming(string)"/> to end timing
+    /// of execution block and update the associated counter.
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var timing = counters.beginTiming("mymethod.exec_time");
+    /// try {
+    /// ...
+    /// } finally {
+    /// timing.endTiming();
+    /// }
+    /// </code>
+    /// </example>
     public class Timing : IDisposable
     {
         private readonly int _start;
@@ -12,16 +23,15 @@ namespace PipServices.Components.Count
         private readonly string _counter;
 
         /// <summary>
-        /// Creates instance of timing object that doesn't record anything
+        /// Creates a new instance of the timing callback object.
         /// </summary>
         public Timing() { }
 
         /// <summary>
-        /// Creates instance of timing object that calculates elapsed time
-        /// and stores it to specified performance counters component under specified name.
+        /// Creates a new instance of the timing callback object.
         /// </summary>
-        /// <param name="counter">a name of the counter to record elapsed time interval.</param>
-        /// <param name="callback">a performance counters component to store calculated value.</param>
+        /// <param name="counter">an associated counter name</param>
+        /// <param name="callback">a callback that shall be called when endTiming is called.</param>
         public Timing(string counter, ITimingCallback callback)
         {
             _counter = counter;
@@ -30,7 +40,7 @@ namespace PipServices.Components.Count
         }
 
         /// <summary>
-        /// Completes measuring time interval and updates counter.
+        /// Ends timing of an execution block, calculates elapsed time and updates the associated counter.
         /// </summary>
         public void EndTiming()
         {

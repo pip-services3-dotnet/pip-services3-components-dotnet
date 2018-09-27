@@ -1,33 +1,61 @@
 ﻿using System.Collections.Generic;
 using PipServices.Commons.Config;
 using PipServices.Commons.Data;
+using PipServices.Components.Auth;
 
 namespace PipServices.Components.Connect
 {
     /// <summary>
-    /// Connection parameters as set in component configuration or retrieved by discovery service.
-    /// It contains service protocol, host, port number, route, database name, timeouts 
-    /// and additional configuration parameters.
+    /// Contains connection parameters to connect to external services.
+    /// They are used together with credential parameters, but usually stored
+    /// separately from more protected sensitive values.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// discovery_key: key to retrieve parameters from discovery service 
+    /// protocol:      connection protocol like http, https, tcp, udp
+    /// host:          host name or IP address 
+    /// port:          port number
+    /// uri:           resource URI or connection string with all parameters in it
+    /// 
+    /// In addition to standard parameters ConnectionParams may contain any number of custom parameters
     /// </summary>
+    /// <example>
+    /// <code>
+    /// Example ConnectionParams object usage:
+    /// 
+    /// var connection = ConnectionParams.FromTuples(
+    /// "protocol", "http",
+    /// "host", "10.1.1.100",
+    /// "port", "8080",
+    /// "cluster", "mycluster"
+    /// );
+    /// 
+    /// var host = connection.Host;                             // Result: "10.1.1.100"
+    /// var port = connection.Port;                             // Result: 8080
+    /// var cluster = connection.GetAsNullableString("cluster");     // Result: "mycluster" 
+    /// </code>
+    /// </example>
+    /// See <see cref="ConfigParams"/>, <see cref="CredentialParams"/>, <see cref="ConnectionResolver"/>, <see cref="IDiscovery"/>
     public class ConnectionParams : ConfigParams
     {
         /// <summary>
-        /// Creates an empty instance of connection parameters.
+        /// Creates a new connection parameters and fills it with values.
         /// </summary>
         public ConnectionParams() { }
 
         /// <summary>
-        /// Create an instance of service address with free-form configuration map.
+        /// Creates a new connection parameters and fills it with values.
         /// </summary>
-        /// <param name="map">a map with the address configuration parameters.</param>
+        /// <param name="map">(optional) an object to be converted into key-value pairs to initialize this connection.</param>
         public ConnectionParams(IDictionary<string, string> map)
             : base(map)
         { }
 
         /// <summary>
-        /// Checks if discovery registration or resolution shall be performed.
-        /// The discovery is requested when 'discover' parameter contains
-        /// a non-empty string that represents the discovery name.
+        /// Checks if these connection parameters shall be retrieved from
+        /// DiscoveryService.The connection parameters are redirected to
+        /// DiscoveryService when discovery_key parameter is set.
         /// </summary>
         public bool UseDiscovery
         {
@@ -35,7 +63,7 @@ namespace PipServices.Components.Connect
         }
 
         /// <summary>
-        /// Key under which the connection shall be registered or resolved by discovery service. 
+        /// Gets or sets the key to retrieve this connection from DiscoveryService. 
         /// </summary>
         public string DiscoveryKey
         {
@@ -55,8 +83,8 @@ namespace PipServices.Components.Connect
         /// <summary>
         /// Gets the connection protocol
         /// </summary>
-        /// <param name="defaultValue">defaultValue the default protocol</param>
-        /// <returns>the connection protocol</returns>
+        /// <param name="defaultValue">the default protocol</param>
+        /// <returns>the connection protocol or the default value if it's not set.</returns>
         public string GetProtocol(string defaultValue)
         {
             return GetAsStringWithDefault("protocol", defaultValue);
@@ -89,8 +117,7 @@ namespace PipServices.Components.Connect
         }
 
         /// <summary>
-        /// Gets the endpoint uri constructed from protocol, host and port
-        /// and returned as <protocol>://<host | ip>:<port>
+        /// Gets the resource URI or connection string. Usually it includes all connection parameters in it.
         /// </summary>
         public string Uri
         {
@@ -98,12 +125,28 @@ namespace PipServices.Components.Connect
             set { SetAsObject("uri", value); }
         }
 
+        /// <summary>
+        /// Creates a new ConnectionParams object filled with key-value pairs serialized as a string.
+        /// </summary>
+        /// <param name="line">a string with serialized key-value pairs as
+        /// "key1=value1;key2=value2;..." Example:
+        /// "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"</param>
+        /// <returns>a new ConnectionParams object.</returns>
         public new static ConnectionParams FromString(string line)
         {
             var map = StringValueMap.FromString(line);
             return new ConnectionParams(map);
         }
 
+        /// <summary>
+        /// Retrieves all ConnectionParams from configuration parameters from
+        /// "connections" section.If "connection" section is present instead, than it
+        /// returns a list with only one ConnectionParams.
+        /// </summary>
+        /// <param name="config">a configuration parameters to retrieve connections</param>
+        /// <param name="configAsDefault">boolean parameter for default configuration. If "true"
+        /// the default value will be added to the result.</param>
+        /// <returns>a list of retrieved ConnectionParams</returns>
         public static List<ConnectionParams> ManyFromConfig(ConfigParams config, bool configAsDefault = true)
         {
             var result = new List<ConnectionParams>();
@@ -135,6 +178,15 @@ namespace PipServices.Components.Connect
             return result;
         }
 
+        /// <summary>
+        /// Retrieves a single ConnectionParams from configuration parameters from
+        /// "connection" section.If "connections" section is present instead, then is
+        /// returns only the first connection element.
+        /// </summary>
+        /// <param name="config">ConnectionParams, containing a section named "connection(s)".</param>
+        /// <param name="configAsDefault">boolean parameter for default configuration. If "true"
+        /// the default value will be added to the result.</param>
+        /// <returns>the generated ConnectionParams object.</returns>
         public static ConnectionParams FromConfig(ConfigParams config, bool configAsDefault = true)
         {
             var connections = ManyFromConfig(config, configAsDefault);

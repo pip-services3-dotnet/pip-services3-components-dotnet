@@ -6,11 +6,25 @@ using System.Threading.Tasks;
 namespace PipServices.Components.Cache
 {
     /// <summary>
-    /// Local in-memory cache that can be used in non-scaled deployments or for testing.
+    /// Cache that stores values in the process memory.
+    /// 
+    /// Remember: This implementation is not suitable for synchronization of distributed processes.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// options:
+    /// timeout:               default caching timeout in milliseconds (default: 1 minute)
+    /// max_size:              maximum number of values stored in this cache (default: 1000)   
     /// </summary>
-    /// <remarks>
-    /// This class is thread-safe.
-    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var cache = new MemoryCache();
+    /// ...
+    /// cache.StoreAsync("123", "key1", "ABC", 0);
+    /// ...
+    /// </code>
+    /// </example>
+    /// See <see cref="ICache"/>
     public class MemoryCache : AbstractCache
     {
         private readonly long DefaultTimeout = 60000;
@@ -20,7 +34,7 @@ namespace PipServices.Components.Cache
         private readonly object _lock = new object();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemoryCache"/> class.
+        /// Creates instance of local in-memory cache component
         /// </summary>
         public MemoryCache()
             : this (null)
@@ -28,9 +42,9 @@ namespace PipServices.Components.Cache
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MemoryCache"/> class.
+        /// Creates instance of local in-memory cache component
         /// </summary>
-        /// <param name="config">The configuration.</param>
+        /// <param name="config">configuration parameters</param>
         public MemoryCache(ConfigParams config)
         {
             Timeout = DefaultTimeout;
@@ -45,15 +59,18 @@ namespace PipServices.Components.Cache
         public long MaxSize { get; set; }
 
         /// <summary>
-        /// Initializes the components according to supplied configuration parameters.
+        /// Configures component by passing configuration parameters.
         /// </summary>
-        /// <param name="config">Configuration parameters.</param>
+        /// <param name="config">configuration parameters.</param>
         public override void Configure(ConfigParams config)
         {
             Timeout = config.GetAsLongWithDefault("timeout", Timeout);
             MaxSize = config.GetAsLongWithDefault("max_size", MaxSize);
         }
 
+        /// <summary>
+        /// Clears component state.
+        /// </summary>
         private void Cleanup()
         {
             CacheEntry oldest = null;
@@ -86,11 +103,12 @@ namespace PipServices.Components.Cache
         }
 
         /// <summary>
-        /// Retrieves a value from cache by unique key.
+        /// Retrieves cached value from the cache using its key. If value is missing in
+        /// the cache or expired it returns null.
         /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="key">Unique key identifying a data object.</param>
-        /// <returns>Cached value or null if the value is not found.</returns>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique value key.</param>
+        /// <returns>a cached value or null if value wasn't found or timeout expired.</returns>
         public async override Task<T> RetrieveAsync<T>(string correlationId, string key)
         {
             if (key == null)
@@ -117,13 +135,13 @@ namespace PipServices.Components.Cache
         }
 
         /// <summary>
-        /// Stores an object identified by a unique key in cache.
+        /// Stores value in the cache with expiration time.
         /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="key">Unique key identifying a data object.</param>
-        /// <param name="value">The data object to store.</param>
-        /// <param name="timeout">Time to live for the object in milliseconds.</param>
-        /// <returns>Cached object stored in the cache.</returns>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique value key.</param>
+        /// <param name="value">a value to store.</param>
+        /// <param name="timeout">expiration timeout in milliseconds.</param>
+        /// <returns>a cached value stored in the cache.</returns>
         public async override Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout)
         {
             if (key == null)
@@ -156,10 +174,10 @@ namespace PipServices.Components.Cache
         }
 
         /// <summary>
-        /// Removes an object from cache.
+        /// Removes a value from the cache by its key.
         /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="key">Unique key identifying the object.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique value key.</param>
         public async override Task RemoveAsync(string correlationId, string key)
         {
             if (key == null)
@@ -173,6 +191,10 @@ namespace PipServices.Components.Cache
             await Task.Delay(0);
         }
 
+        /// <summary>
+        /// Clears component state.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         public async Task ClearAsync(string correlationId)
         {
             lock (_lock)

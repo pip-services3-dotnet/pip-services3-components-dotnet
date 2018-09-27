@@ -5,18 +5,46 @@ using System.Collections.Generic;
 namespace PipServices.Components.Log
 {
     /// <summary>
-    /// Class CompositeLogger.
+    /// Aggregates all loggers from component references under a single component.
+    /// 
+    /// It allows to log messages and conveniently send them to multiple destinations.
+    /// 
+    /// ### References ###
+    /// 
+    /// - <code>\*:logger:\*:\*:1.0</code> 	(optional)[[ILogger]] components to pass log messages
     /// </summary>
-    /// <seealso cref="PipServices.Components.Log.Logger" />
-    /// <seealso cref="PipServices.Commons.Refer.IReferenceable" />
+    /// <example>
+    /// <code>
+    /// class MyComponent: IConfigurable, IReferenceable 
+    /// {
+    ///     CompositeLogger _logger = new CompositeLogger();
+    ///     public void Configure(ConfigParams config)
+    ///     {
+    ///         this._logger.Configure(config);
+    ///         ...
+    ///     }
+    ///     public void SetReferences(IReferences references)
+    ///     {
+    ///         this._logger.SetReferences(references);
+    ///         ...
+    ///     }
+    ///     public void MyMethod(String correlationId)
+    ///     {
+    ///         this._logger.Debug(correlationId, "Called method mycomponent.mymethod");
+    ///         ...
+    ///     }
+    /// }
+    /// </code>
+    /// </example>
+    /// See <see cref="ILogger"/>
     public class CompositeLogger : Logger
     {
         protected readonly List<ILogger> _loggers = new List<ILogger>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CompositeLogger"/> class.
+        /// Creates a new instance of the logger.
         /// </summary>
-        /// <param name="references">The references.</param>
+        /// <param name="references">references to locate the component dependencies.</param>
         public CompositeLogger(IReferences references = null)
         {
             Level = LogLevel.Trace;
@@ -26,9 +54,9 @@ namespace PipServices.Components.Log
         }
 
         /// <summary>
-        /// Sets the references.
+        /// Sets references to dependent components.
         /// </summary>
-        /// <param name="references">The references.</param>
+        /// <param name="references">references to locate the component dependencies.</param>
         public override void SetReferences(IReferences references)
         {
             base.SetReferences(references);
@@ -42,12 +70,12 @@ namespace PipServices.Components.Log
         }
 
         /// <summary>
-        /// Writes the specified level.
+        /// Writes a log message to the logger destination(s).
         /// </summary>
-        /// <param name="level">The level.</param>
-        /// <param name="correlationId">The correlation identifier.</param>
-        /// <param name="error">The error.</param>
-        /// <param name="message">The message.</param>
+        /// <param name="level">a log level.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="error">an error object associated with this message.</param>
+        /// <param name="message">a human-readable message to log.</param>
         protected override void Write(LogLevel level, string correlationId, Exception error, string message)
         {
             foreach (var logger in _loggers)

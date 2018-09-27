@@ -4,13 +4,45 @@ using System.Threading.Tasks;
 
 namespace PipServices.Components.Connect
 {
+    /// <summary>
+    /// Discovery service that keeps connections in memory.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// [connection key 1]:            
+    /// ...                          connection parameters for key 1
+    /// [connection key 2]:            
+    /// ...                          connection parameters for key N
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// ConfigParams config = ConfigParams.fromTuples(
+    /// "key1.host", "10.1.1.100",
+    /// "key1.port", "8080",
+    /// "key2.host", "10.1.1.100",
+    /// "key2.port", "8082"
+    /// );
+    /// 
+    /// MemoryDiscovery discovery = new MemoryDiscovery();
+    /// discovery.readConnections(config);
+    /// discovery.resolve("123", "key1");
+    /// </code>
+    /// </example>
+    /// See <see cref="IDiscovery"/>, <see cref="ConnectionParams"/>
     public class MemoryDiscovery : IDiscovery, IReconfigurable
     {
         private List<DiscoveryItem> _items = new List<DiscoveryItem>();
         private object _lock = new object();
 
+        /// <summary>
+        /// Creates a new instance of discovery service.
+        /// </summary>
         public MemoryDiscovery() { }
 
+        /// <summary>
+        /// Creates a new instance of discovery service.
+        /// </summary>
+        /// <param name="config">(optional) configuration with connection parameters.</param>
         public MemoryDiscovery(ConfigParams config = null)
         {
             if (config != null) Configure(config);
@@ -22,6 +54,10 @@ namespace PipServices.Components.Connect
             public ConnectionParams Connection;
         }
 
+        /// <summary>
+        /// Configures component by passing configuration parameters.
+        /// </summary>
+        /// <param name="config">configuration parameters to be set.</param>
         public virtual void Configure(ConfigParams config)
         {
             ReadConnections(config);
@@ -44,6 +80,12 @@ namespace PipServices.Components.Connect
             }
         }
 
+        /// <summary>
+        /// Registers connection parameters into the discovery service.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a key to uniquely identify the connection parameters.</param>
+        /// <param name="connection">a connection to be registered.</param>
         public async Task RegisterAsync(string correlationId, string key, ConnectionParams connection)
         {
             lock (_lock)
@@ -59,6 +101,12 @@ namespace PipServices.Components.Connect
             await Task.Delay(0);
         }
 
+        /// <summary>
+        /// Resolves a single connection parameters by its key.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a key to uniquely identify the connection.</param>
+        /// <returns>a resolved connection.</returns>
         public async Task<ConnectionParams> ResolveOneAsync(string correlationId, string key)
         {
             ConnectionParams connection = null;
@@ -78,6 +126,12 @@ namespace PipServices.Components.Connect
             return await Task.FromResult(connection);
         }
 
+        /// <summary>
+        /// Resolves all connection parameters by their key.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a key to uniquely identify the connection.</param>
+        /// <returns>a list with resolved connections.</returns>
         public async Task<List<ConnectionParams>> ResolveAllAsync(string correlationId, string key)
         {
             var connections = new List<ConnectionParams>();

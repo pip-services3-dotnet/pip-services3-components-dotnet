@@ -3,16 +3,16 @@
 namespace PipServices.Components.Cache
 {
     /// <summary>
-    /// Holds cached value for in-memory cache.
+    /// Data object to store cached values with their keys used by MemoryCache
     /// </summary>
     public class CacheEntry
     {
         /// <summary>
-        /// Creates an instance of the cache entry.
+        /// Creates a new instance of the cache entry and assigns its values.
         /// </summary>
-        /// <param name="key">Unique key used to identify the value.</param>
-        /// <param name="value">Cached value.</param>
-        /// <param name="timeout">Time to live for the cached object in milliseconds.</param>
+        /// <param name="key">a unique key to locate the value.</param>
+        /// <param name="value">a value to be stored.</param>
+        /// <param name="timeout">expiration timeout in milliseconds.</param>
         public CacheEntry(string key, object value, long timeout)
         {
             Key = key;
@@ -20,10 +20,26 @@ namespace PipServices.Components.Cache
             Expiration = Environment.TickCount + timeout;
         }
 
+        /// <summary>
+        /// Gets the key to locate the cached value.
+        /// </summary>
         public string Key { get; }
+        
+        /// <summary>
+        /// Gets the cached value.
+        /// </summary>
         public object Value { get; private set; }
+
+        /// <summary>
+        /// Gets the expiration timeout.
+        /// </summary>
         public long Expiration { get; private set; }
 
+        /// <summary>
+        /// Sets a new value and extends its expiration.
+        /// </summary>
+        /// <param name="value">a new cached value.</param>
+        /// <param name="timeout">a expiration timeout in milliseconds.</param>
         public void SetValue(object value, long timeout)
         {
             Value = value;
@@ -31,9 +47,9 @@ namespace PipServices.Components.Cache
         }
 
         /// <summary>
-        /// Checks if the object expired.
+        /// Checks if this value already expired.
         /// </summary>
-        /// <returns><code>True</code> if expired.</returns>
+        /// <returns>true if the value already expires and false otherwise.</returns>
         public bool IsExpired()
         {
             return Expiration < Environment.TickCount;

@@ -5,6 +5,24 @@ using PipServices.Commons.Errors;
 
 namespace PipServices.Components.Log
 {
+    /// <summary>
+    /// Abstract logger that caches captured log messages in memory and periodically dumps them.
+    /// Child classes implement saving cached messages to their specified destinations.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// - level:             maximum log level to capture
+    /// - source:            source(context) name
+    /// - options:
+    /// - interval:        interval in milliseconds to save log messages(default: 10 seconds)
+    /// - max_cache_size:  maximum number of messages stored in this cache (default: 100)        
+    /// 
+    /// ### References ###
+    /// 
+    /// - <code>\*:context-info:\*:\*:1.0</code>     (optional) [[ContextInfo]] to detect the context id  
+    ///                                                 and specify counters source
+    /// </summary>
+    /// See <see cref="ILogger"/>, <see cref="Logger"/>, <see cref="LogMessage"/>
     public abstract class CachedLogger : Logger, IReconfigurable
     {
         protected List<LogMessage> _cache = new List<LogMessage>();
@@ -13,7 +31,14 @@ namespace PipServices.Components.Log
         protected int _maxCacheSize = 100;
         protected int _interval = 10000;
         protected object _lock = new object();
-        
+
+        /// <summary>
+        /// Writes a log message to the logger destination.
+        /// </summary>
+        /// <param name="level">a log level.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="error">an error object associated with this message.</param>
+        /// <param name="message">a human-readable message to log.</param>
         protected override void Write(LogLevel level, string correlationId, Exception error, string message)
         {
             ErrorDescription errorDescription = error != null ? ErrorDescriptionFactory.Create(error, correlationId) : null;
@@ -35,8 +60,16 @@ namespace PipServices.Components.Log
             Update();
         }
 
+        /// <summary>
+        /// Saves log messages from the cache.
+        /// </summary>
+        /// <param name="messages">a list with log messages</param>
         protected abstract void Save(List<LogMessage> messages);
 
+        /// <summary>
+        /// Configures component by passing configuration parameters.
+        /// </summary>
+        /// <param name="config">configuration parameters to be set.</param>
         public override void Configure(ConfigParams config)
         {
             base.Configure(config);
@@ -45,6 +78,9 @@ namespace PipServices.Components.Log
             _maxCacheSize = config.GetAsIntegerWithDefault("options.max_cache_size", _maxCacheSize);
         }
 
+        /// <summary>
+        /// Clears (removes) all cached log messages.
+        /// </summary>
         public void Clear()
         {
             lock (_lock)
@@ -54,6 +90,10 @@ namespace PipServices.Components.Log
             _updated = false;
         }
 
+        /// <summary>
+        /// Dumps (writes) the currently cached log messages.
+        /// </summary>
+        /// See <see cref="Write(LogLevel, string, Exception, string)"/>
         public void Dump()
         {
             if (_updated)
@@ -95,6 +135,10 @@ namespace PipServices.Components.Log
             }
         }
 
+        /// <summary>
+        /// Makes message cache as updated and dumps it when timeout expires.
+        /// </summary>
+        /// See <see cref="Dump"/>
         protected void Update()
         {
             _updated = true;

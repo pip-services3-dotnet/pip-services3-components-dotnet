@@ -1,14 +1,43 @@
 ﻿using System.Collections.Generic;
 using PipServices.Commons.Config;
 using PipServices.Commons.Data;
+using PipServices.Components.Connect;
 
 namespace PipServices.Components.Auth
 {
     /// <summary>
-    /// Credentials such as login and password, client id and key,
-    /// certificates, etc. Separating credentials from connection parameters
-    /// allow to store them in secure location and share among multiple connections.
+    /// Contains credentials to authenticate against external services.
+    /// They are used together with connection parameters, but usually stored
+    /// in a separate store, protected from unauthorized access.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// store_key:     key to retrieve parameters from credential store
+    /// username:      user name
+    /// user:          alternative to username
+    /// password:      user password
+    /// pass:          alternative to password
+    /// access_id:     application access id
+    /// client_id:     alternative to access_id
+    /// access_key:    application secret key
+    /// client_key:    alternative to access_key
+    /// secret_key:    alternative to access_key
+    /// 
+    /// In addition to standard parameters CredentialParams may contain any number of custom parameters
     /// </summary>
+    /// <example>
+    /// <code>
+    /// var credential = CredentialParams.FromTuples(
+    /// "user", "jdoe",
+    /// "pass", "pass123",
+    /// "pin", "321" );
+    /// 
+    /// var username = credential.GetUsername();             // Result: "jdoe"
+    /// var password = credential.GetPassword();             // Result: "pass123"
+    /// var pin = credential.GetAsNullableString("pin");     // Result: 321 
+    /// </code>
+    /// </example>
+    /// See <see cref="ConfigParams"/>, <see cref="ConnectionParams"/>, <see cref="CredentialResolver"/>, <see cref="ICredentialStore"/>
     public class CredentialParams : ConfigParams
     {
         /// <summary>
@@ -17,25 +46,27 @@ namespace PipServices.Components.Auth
         public CredentialParams() { }
 
         /// <summary>
-        /// Create an instance of credentials from free-form configuration map.
+        /// Creates a new ConfigParams and fills it with values.
         /// </summary>
-        /// <param name="map">a map with the credentials</param>
+        /// <param name="map">(optional) an object to be converted into key-value pairs to 
+        /// initialize these credentials.</param>
         public CredentialParams(IDictionary<string, string> map)
             : base(map)
         { }
 
         /// <summary>
-        /// Checks if credential lookup shall be performed.
-        /// The credentials are requested when 'store_key' parameter contains 
-        /// a non-empty string that represents the name in credential store.
+        /// Checks if these credential parameters shall be retrieved from
+        /// CredentialStore.The credential parameters are redirected to CredentialStore
+        /// when store_key parameter is set.
         /// </summary>
+        /// <returns>true if credentials shall be retrieved from CredentialStore</returns>
         public bool UseCredentialStore
         {
             get { return ContainsKey("store_key"); }
         }
 
         /// <summary>
-        /// Gets or sets the key under which the connection shall be looked up in credential store. 
+        /// Gets or setsthe key to retrieve these credentials from CredentialStore. 
         /// </summary>
         public string StoreKey
         {
@@ -89,12 +120,28 @@ namespace PipServices.Components.Auth
             set { this["access_key"] = value; }
         }
 
+        /// <summary>
+        /// Creates a new CredentialParams object filled with key-value pairs serialized as a string.
+        /// </summary>
+        /// <param name="line">a string with serialized key-value pairs as
+        /// "key1=value1;key2=value2;..." Example:
+        /// "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"</param>
+        /// <returns>a new CredentialParams object.</returns>
         public new static CredentialParams FromString(string line)
         {
             var map = StringValueMap.FromString(line);
             return new CredentialParams(map);
         }
 
+        /// <summary>
+        /// Retrieves all CredentialParams from configuration parameters from
+        /// "credentials" section.If "credential" section is present instead, than it
+        /// returns a list with only one CredentialParams.
+        /// </summary>
+        /// <param name="config">a configuration parameters to retrieve credentials</param>
+        /// <param name="configAsDefault">boolean parameter for default configuration. If "true"
+        /// the default value will be added to the result.</param>
+        /// <returns>a list of retrieved CredentialParams</returns>
         public static List<CredentialParams> ManyFromConfig(ConfigParams config, bool configAsDefault = true)
         {
             var result = new List<CredentialParams>();
@@ -126,6 +173,15 @@ namespace PipServices.Components.Auth
             return result;
         }
 
+        /// <summary>
+        /// Retrieves a single CredentialParams from configuration parameters from
+        /// "credential" section.If "credentials" section is present instead, then is
+        /// returns only the first credential element.
+        /// </summary>
+        /// <param name="config">ConfigParams, containing a section named "credential(s)".</param>
+        /// <param name="configAsDefault">boolean parameter for default configuration. If "true"
+        /// the default value will be added to the result.</param>
+        /// <returns>the generated CredentialParams object.</returns>
         public static CredentialParams FromConfig(ConfigParams config, bool configAsDefault = true)
         {
             var connections = ManyFromConfig(config, configAsDefault);

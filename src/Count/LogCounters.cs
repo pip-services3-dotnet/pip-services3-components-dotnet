@@ -7,10 +7,47 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Components.Count
 {
+    /// <summary>
+    /// Performance counters that periodically dumps counters measurements to logger.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// options:
+    /// interval:        interval in milliseconds to save current counters measurements(default: 5 mins)
+    /// reset_timeout:   timeout in milliseconds to reset the counters. 0 disables the reset(default: 0)
+    /// 
+    /// ### References ###
+    /// 
+    /// - *:logger:*:*:1.0           [[ILogger]] components to dump the captured counters
+    /// - *:context-info:*:*:1.0     (optional)[[ContextInfo]] to detect the context id and specify counters source
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var counters = new LogCounters();
+    /// counters.SetReferences(References.fromTuples(
+    /// new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger()
+    /// ));
+    /// 
+    /// counters.Increment("mycomponent.mymethod.calls");
+    /// var timing = counters.BeginTiming("mycomponent.mymethod.exec_time");
+    /// try {
+    ///     ...
+    ///     }
+    /// finally {
+    /// timing.EndTiming();
+    /// }
+    /// 
+    /// counters.dump();
+    /// </code>
+    /// </example>
     public class LogCounters : CachedCounters, IReferenceable
     {
         private readonly CompositeLogger _logger = new CompositeLogger();
 
+        /// <summary>
+        /// Sets references to dependent components.
+        /// </summary>
+        /// <param name="references">references to locate the component dependencies.</param>
         public virtual void SetReferences(IReferences references)
         {
             _logger.SetReferences(references);
@@ -36,10 +73,10 @@ namespace PipServices.Components.Count
             return result;
         }
 
-        /**
-         * Outputs a list of counter values to log.
-         * @param counter a list of counters to be dump to log.
-         */
+        /// <summary>
+        /// Saves the current counters measurements.
+        /// </summary>
+        /// <param name="counters">current counters measurements to be saves.</param>
         protected override void Save(IEnumerable<Counter> counters)
         {
             if (_logger == null || counters == null)

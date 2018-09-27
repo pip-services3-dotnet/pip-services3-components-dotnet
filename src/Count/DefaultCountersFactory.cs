@@ -3,6 +3,10 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Components.Count
 {
+    /// <summary>
+    /// Creates ICounters components by their descriptors.
+    /// </summary>
+    /// See <see cref="Factory"/>, <see cref="NullCounters"/>, <see cref="LogCounters"/>, <see cref="CompositeCounters"/>
     public class DefaultCountersFactory : Factory
     {
         public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "counters", "default", "1.0");
@@ -13,6 +17,9 @@ namespace PipServices.Components.Count
         public static readonly Descriptor CompositeCountersDescriptor = new Descriptor("pip-services", "counters", "composite", "*", "1.0");
         public static readonly Descriptor CompositeCountersDescriptor2 = new Descriptor("pip-services-commons", "counters", "composite", "*", "1.0");
 
+        /// <summary>
+        /// Create a new instance of the factory.
+        /// </summary>
         public DefaultCountersFactory()
         {
             RegisterAsType(NullCountersDescriptor, typeof(NullCounters));

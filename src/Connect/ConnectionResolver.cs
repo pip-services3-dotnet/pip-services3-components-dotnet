@@ -6,32 +6,95 @@ using System.Threading.Tasks;
 
 namespace PipServices.Components.Connect
 {
+    /// <summary>
+    /// Helper class to retrieve component connections.
+    /// 
+    /// If connections are configured to be retrieved from IDiscovery,
+    /// it automatically locates IDiscovery in component references
+    /// and retrieve connections from there using discovery_key parameter.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// connection:    
+    /// discovery_key:               (optional) a key to retrieve the connection from IDiscovery
+    /// ...                          other connection parameters
+    /// 
+    /// connections:                   alternative to connection
+    /// [connection params 1]:       first connection parameters
+    /// ...
+    /// [connection params N]:       Nth connection parameters
+    /// ...
+    /// 
+    /// ### References ###
+    /// 
+    /// - *:discovery:*:*:1.0            (optional) IDiscovery services to resolve connections
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var config = ConfigParams.FromTuples(
+    /// "connection.host", "10.1.1.100",
+    /// "connection.port", 8080
+    /// );
+    /// 
+    /// var connectionResolver = new ConnectionResolver();
+    /// connectionResolver.Configure(config);
+    /// connectionResolver.SetReferences(references);
+    /// connectionResolver.ResolveAsync("123");
+    /// </code>
+    /// </example>
+    /// See <see cref="ConnectionParams"/>, <see cref="IDiscovery"/>
     public sealed class ConnectionResolver
     {
         private readonly List<ConnectionParams> _connections = new List<ConnectionParams>();
         private IReferences _references;
 
+        /// <summary>
+        /// Creates a new instance of connection resolver.
+        /// </summary>
+        /// <param name="config">(optional) component configuration parameters</param>
+        /// <param name="references">(optional) component references</param>
         public ConnectionResolver(ConfigParams config = null, IReferences references = null)
         {
             if (config != null) Configure(config);
             if (references != null) SetReferences(references);
         }
 
+        /// <summary>
+        /// Sets references to dependent components.
+        /// </summary>
+        /// <param name="references">references to locate the component dependencies.</param>
         public void SetReferences(IReferences references)
         {
             _references = references;
         }
 
+        /// <summary>
+        /// Configures component by passing configuration parameters.
+        /// </summary>
+        /// <param name="config">configuration parameters to be set.</param>
+        /// <param name="configAsDefault">boolean parameter for default configuration. If "true"
+        /// the default value will be added to the result.</param>
         public void Configure(ConfigParams config, bool configAsDefault = true)
         {
             _connections.AddRange(ConnectionParams.ManyFromConfig(config, configAsDefault));
         }
 
+        /// <summary>
+        /// Gets all connections configured in component configuration.
+        /// 
+        /// Redirect to Discovery services is not done at this point.If you need fully
+        /// fleshed connection use resolve() method instead.
+        /// </summary>
+        /// <returns>a list with connection parameters</returns>
         public List<ConnectionParams> GetAll()
         {
             return _connections;
         }
 
+        /// <summary>
+        /// Adds a new connection to component connections
+        /// </summary>
+        /// <param name="connection">new connection parameters to be added</param>
         public void Add(ConnectionParams connection)
         {
             _connections.Add(connection);
@@ -53,6 +116,12 @@ namespace PipServices.Components.Connect
             return true;
         }
 
+        /// <summary>
+        /// Registers the given connection in all referenced discovery services. This
+        /// method can be used for dynamic service discovery.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="connection">a connection to register.</param>
         public async Task RegisterAsync(string correlationId, ConnectionParams connection)
         {
             var result = await RegisterInDiscoveryAsync(correlationId, connection);
@@ -83,6 +152,12 @@ namespace PipServices.Components.Connect
             return null;
         }
 
+        /// <summary>
+        /// Resolves a single component connection. If connections are configured to be
+        /// retrieved from Discovery service it finds a IDiscovery and resolves the connection there.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <returns>resolved connection parameters or null if nothing was found.</returns>
         public async Task<ConnectionParams> ResolveAsync(string correlationId)
         {
             if (_connections.Count == 0) return null;
@@ -136,6 +211,12 @@ namespace PipServices.Components.Connect
             return result;
         }
 
+        /// <summary>
+        /// Resolves all component connection. If connections are configured to be
+        /// retrieved from Discovery service it finds a IDiscovery and resolves the connection there.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <returns>a list of resolved connections.</returns>
         public async Task<List<ConnectionParams>> ResolveAllAsync(string correlationId)
         {
             var resolved = new List<ConnectionParams>();

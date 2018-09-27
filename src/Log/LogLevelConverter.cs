@@ -1,7 +1,16 @@
 ﻿namespace PipServices.Components.Log
 {
+    /// <summary>
+    /// Helper class to convert log level values.
+    /// </summary>
+    /// See <see cref="LogLevel"/>
     public static class LogLevelConverter
     {
+        /// <summary>
+        /// Converts numbers and strings to standard log level values.
+        /// </summary>
+        /// <param name="value">a value to be converted</param>
+        /// <returns>converted log level</returns>
         public static LogLevel ToLogLevel(object value)
         {
             if (value == null) return LogLevel.Info;
@@ -26,6 +35,11 @@
                 return LogLevel.Info;
         }
 
+        /// <summary>
+        /// Converts log level to a string.
+        /// </summary>
+        /// <param name="level">a log level to convert</param>
+        /// <returns>log level name string.</returns>
         public static string ToString(LogLevel level)
         {
             if (level == LogLevel.Fatal) return "FATAL";
@@ -37,6 +51,11 @@
             return "UNDEF";
         }
 
+        /// <summary>
+        /// Converts log level to a number.
+        /// </summary>
+        /// <param name="level">a log level to convert</param>
+        /// <returns>log level number value.</returns>
         public static int ToInteger(LogLevel level)
         {
             if (level == LogLevel.Fatal) return 1;

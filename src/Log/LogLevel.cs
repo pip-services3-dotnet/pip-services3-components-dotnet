@@ -1,40 +1,25 @@
 ﻿namespace PipServices.Components.Log
 {
+    /// <summary>
+    /// Standard log levels.
+    /// Logs at debug and trace levels are usually captured
+    /// only locally for troubleshooting and never sent to consolidated log services.
+    /// </summary>
     public enum LogLevel
     {
-        /// <summary>
-        ///     Nothing to be logged
-        /// </summary>
+        /** Nothing to log */
         None = 0,
-
-        /// <summary>
-        ///     Logs only fatal errors that cause microservice to fail
-        /// </summary>
+        /** Log only fatal errors that cause processes to crash */
         Fatal = 1,
-
-        /// <summary>
-        ///     Logs all errors - fatal or recoverable
-        /// </summary>
+        /** Log all errors. */
         Error = 2,
-
-        /// <summary>
-        ///     Logs errors and warnings
-        /// </summary>
+        /** Log errors and warnings */
         Warn = 3,
-
-        /// <summary>
-        ///     Logs errors and important information messages
-        /// </summary>
+        /** Log errors and important information messages */
         Info = 4,
-
-        /// <summary>
-        ///     Logs everything up to high-level debugging information
-        /// </summary>
+        /** Log everything except traces */
         Debug = 5,
-
-        /// <summary>
-        ///     Logs everything down to fine-granular debugging messages
-        /// </summary>
+        /** Log everything. */
         Trace = 6
     }
 }

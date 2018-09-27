@@ -4,8 +4,39 @@ using PipServices.Commons.Convert;
 
 namespace PipServices.Components.Log
 {
+    /// <summary>
+    /// Logger that writes log messages to console.
+    /// 
+    /// Errors are written to standard err stream
+    /// and all other messages to standard out stream.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// level:             maximum log level to capture
+    /// source:            source(context) name
+    /// 
+    /// ### References ###
+    /// 
+    /// - *:context-info:*:*:1.0     (optional) ContextInfo to detect the context id and specify counters source
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var logger = new ConsoleLogger();
+    /// logger.SetLevel(LogLevel.debug);
+    /// 
+    /// logger.Error("123", ex, "Error occured: %s", ex.message);
+    /// logger.Debug("123", "Everything is OK.");
+    /// </code>
+    /// </example>
     public class ConsoleLogger : Logger
     {
+        /// <summary>
+        /// Writes a log message to the logger destination(s).
+        /// </summary>
+        /// <param name="level">a log level.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="error">an error object associated with this message.</param>
+        /// <param name="message">a human-readable message to log.</param>
         protected override void Write(LogLevel level, string correlationId, Exception error, string message)
         {
             if (Level < level) return;

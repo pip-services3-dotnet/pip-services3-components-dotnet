@@ -1,36 +1,37 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PipServices.Components.Auth;
 
 namespace PipServices.Components.Connect
 {
     /// <summary>
-    /// Service discovery component used to register connections of the services
-    /// or to resolve connections to external services called by clients.
+    /// Interface for discovery services which are used to store and resolve connection parameters
+    /// to connect to external services.
     /// </summary>
+    /// See <see cref="ConnectionParams"/>, <see cref="CredentialParams"/>
     public interface IDiscovery
     {
         /// <summary>
-        /// Registers connection where API service binds to.
+        /// Registers connection parameters into the discovery service.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="key">a key to identify the connection</param>
-        /// <param name="connection">the connection to be registered.</param>
-        /// <param name="token"></param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a key to uniquely identify the connection parameters.</param>
+        /// <param name="connection">a connection to be registered.</param>
         Task RegisterAsync(string correlationId, string key, ConnectionParams connection);
 
         /// <summary>
-        /// Resolves one connection from the list of service connections.
+        /// Resolves a single connection parameters by its key.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="key">a key locate a connection</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a key to uniquely identify the connection.</param>
         /// <returns>a resolved connection.</returns>
         Task<ConnectionParams> ResolveOneAsync(string correlationId, string key);
 
         /// <summary>
-        /// Resolves a list of connections from to be called by a client.
+        /// Resolves all connection parameters by their key.
         /// </summary>
-        /// <param name="correlationId">a unique transaction id to trace calls across components</param>
-        /// <param name="key">a key locate connections</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a key to uniquely identify the connection.</param>
         /// <returns>a list with resolved connections.</returns>
         Task<List<ConnectionParams>> ResolveAllAsync(string correlationId, string key);
     }

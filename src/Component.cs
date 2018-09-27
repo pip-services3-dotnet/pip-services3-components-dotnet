@@ -6,18 +6,41 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Components
 {
+    /// <summary>
+    /// Abstract component that supportes configurable dependencies, logging and performance counters.
+    /// 
+    /// ### Configuration parameters ###
+    /// 
+    /// dependencies:
+    /// [dependency name 1]: Dependency 1 locator (descriptor)
+    /// ...
+    /// [dependency name N]: Dependency N locator (descriptor)
+    /// ### References ###
+    /// 
+    /// - *:counters:*:*:1.0       (optional)[[ICounters]] components to pass collected measurements
+    /// - *:logger:*:*:1.0         (optional)[[ILogger]] components to pass log messages 
+    /// - ...                      References must match configured dependencies.
+    /// </summary>
     public class Component: IConfigurable, IReferenceable
     {
         protected DependencyResolver _dependencyResolver = new DependencyResolver();
         protected CompositeLogger _logger = new CompositeLogger();
         protected CompositeCounters _counters = new CompositeCounters();
 
+        /// <summary>
+        /// Configures component by passing configuration parameters.
+        /// </summary>
+        /// <param name="config">configuration parameters to be set.</param>
         public void Configure(ConfigParams config)
         {
             _dependencyResolver.Configure(config);
             _logger.Configure(config);
         }
 
+        /// <summary>
+        /// Sets references to dependent components.
+        /// </summary>
+        /// <param name="references">references to locate the component dependencies.</param>
         public void SetReferences(IReferences references)
         {
             _dependencyResolver.SetReferences(references);

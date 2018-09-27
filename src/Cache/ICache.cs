@@ -3,32 +3,34 @@
 namespace PipServices.Components.Cache
 {
     /// <summary>
-    /// Transient cache used to bypass persistence to increase system performance.
+    /// Interface for caches that are used to cache values to improve performance.
     /// </summary>
     public interface ICache
     {
         /// <summary>
-        /// Retrieves a value from cache by unique key.
+        /// Retrieves cached value from the cache using its key. If value is missing in 
+        /// the cache or expired it returns null.
         /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="key">Unique key identifying a data object.</param>
-        /// <returns>Cached value or null if the value is not found.</returns>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique value key.</param>
+        /// <returns>a cached value or null if value wasn't found or timeout expired.</returns>
         Task<T> RetrieveAsync<T>(string correlationId, string key);
 
         /// <summary>
-        /// Stores an object identified by a unique key in cache.
+        /// Stores value in the cache with expiration time.
         /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="key">Unique key identifying a data object.</param>
-        /// <param name="value">The data object to store.</param>
-        /// <param name="timeout">Time to live for the object in milliseconds.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique value key.</param>
+        /// <param name="value">a value to store.</param>
+        /// <param name="timeout">expiration timeout in milliseconds.</param>
+        /// <returns>a cached value stored in the cache.</returns>
         Task<T> StoreAsync<T>(string correlationId, string key, T value, long timeout);
 
         /// <summary>
-        /// Removes an object from cache.
+        /// Removes a value from the cache by its key.
         /// </summary>
-        /// <param name="correlationId"></param>
-        /// <param name="key">Unique key identifying the object.</param>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique value key.</param>
         Task RemoveAsync(string correlationId, string key);
     }
 }

@@ -3,6 +3,10 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Components.Log
 {
+    /// <summary>
+    /// Creates ILogger components by their descriptors.
+    /// </summary>
+    /// See <see cref="Factory"/>, <see cref="NullLogger"/>, <see cref="ConsoleLogger"/>, <see cref="CompositeLogger"/>
     public class DefaultLoggerFactory : Factory
     {
         public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "logger", "default", "1.0");
@@ -17,6 +21,9 @@ namespace PipServices.Components.Log
         public static readonly Descriptor EventLoggerDescriptor = new Descriptor("pip-services", "logger", "event", "*", "1.0");
         public static readonly Descriptor EventLoggerDescriptor2 = new Descriptor("pip-services-commons", "logger", "event", "*", "1.0");
 
+        /// <summary>
+        /// Create a new instance of the factory.
+        /// </summary>
         public DefaultLoggerFactory()
         {
             RegisterAsType(NullLoggerDescriptor, typeof(NullLogger));
