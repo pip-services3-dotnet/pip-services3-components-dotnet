@@ -13,13 +13,13 @@ namespace PipServices.Components.Count
     /// ### Configuration parameters ###
     /// 
     /// options:
-    /// interval:        interval in milliseconds to save current counters measurements(default: 5 mins)
-    /// reset_timeout:   timeout in milliseconds to reset the counters. 0 disables the reset(default: 0)
+    /// - interval:        interval in milliseconds to save current counters measurements(default: 5 mins)
+    /// - reset_timeout:   timeout in milliseconds to reset the counters. 0 disables the reset(default: 0)
     /// 
     /// ### References ###
     /// 
-    /// - *:logger:*:*:1.0           [[ILogger]] components to dump the captured counters
-    /// - *:context-info:*:*:1.0     (optional)[[ContextInfo]] to detect the context id and specify counters source
+    /// - *:logger:*:*:1.0           <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to dump the captured counters
+    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
     /// </summary>
     /// <example>
     /// <code>

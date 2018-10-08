@@ -12,16 +12,16 @@ namespace PipServices.Components.Auth
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// store_key:     key to retrieve parameters from credential store
-    /// username:      user name
-    /// user:          alternative to username
-    /// password:      user password
-    /// pass:          alternative to password
-    /// access_id:     application access id
-    /// client_id:     alternative to access_id
-    /// access_key:    application secret key
-    /// client_key:    alternative to access_key
-    /// secret_key:    alternative to access_key
+    /// - store_key:     key to retrieve parameters from credential store
+    /// - username:      user name
+    /// - user:          alternative to username
+    /// - password:      user password
+    /// - pass:          alternative to password
+    /// - access_id:     application access id
+    /// - client_id:     alternative to access_id
+    /// - access_key:    application secret key
+    /// - client_key:    alternative to access_key
+    /// - secret_key:    alternative to access_key
     /// 
     /// In addition to standard parameters CredentialParams may contain any number of custom parameters
     /// </summary>
@@ -37,7 +37,9 @@ namespace PipServices.Components.Auth
     /// var pin = credential.GetAsNullableString("pin");     // Result: 321 
     /// </code>
     /// </example>
-    /// See <see cref="ConfigParams"/>, <see cref="ConnectionParams"/>, <see cref="CredentialResolver"/>, <see cref="ICredentialStore"/>
+    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, 
+    /// <see cref="CredentialResolver"/>, <see cref="ICredentialStore"/>
     public class CredentialParams : ConfigParams
     {
         /// <summary>

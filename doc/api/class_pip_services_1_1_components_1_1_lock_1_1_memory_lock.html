@@ -123,8 +123,7 @@ Dictionary&lt; string, long &gt;&#160;</td><td class="memItemRight" valign="bott
 <div class="textblock"><p><a class="el" href="class_pip_services_1_1_components_1_1_lock_1_1_lock.html" title="Abstract lock that implements default lock acquisition routine. ">Lock</a> that is used to synchronize execution within one process using shared memory. </p>
 <p>Remember: This implementation is not suitable for synchronization of distributed processes.</p>
 <h3>Configuration parameters</h3>
-<ul>
-<li><b>options:</b></li>
+<p>options:</p><ul>
 <li>retry_timeout: timeout in milliseconds to retry lock acquisition. (Default: 100) </li>
 </ul>
 <div class="fragment"><div class="line">var lock = <span class="keyword">new</span> MemoryLock();</div><div class="line">lock.TryAcquireLock(<span class="stringliteral">&quot;123&quot;</span>, <span class="stringliteral">&quot;key1&quot;</span>, 0);</div><div class="line"><span class="keywordflow">try</span> {</div><div class="line"><span class="comment">// Processing...</span></div><div class="line">}</div><div class="line"><span class="keywordflow">finally</span>  {</div><div class="line">lock.ReleaseLock(<span class="stringliteral">&quot;123&quot;</span>, <span class="stringliteral">&quot;key1&quot;</span>);</div><div class="line"><span class="comment">// Continue...</span></div><div class="line">});</div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_components_1_1_lock_1_1_i_lock.html" title="Interface for locks to synchronize work or parallel processes and to prevent collisions. ">ILock</a>, <a class="el" href="class_pip_services_1_1_components_1_1_lock_1_1_lock.html" title="Abstract lock that implements default lock acquisition routine. ">Lock</a> </p>

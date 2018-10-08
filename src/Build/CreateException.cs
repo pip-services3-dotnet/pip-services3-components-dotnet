@@ -7,7 +7,8 @@ namespace PipServices.Components.Build
     /// <summary>
     /// Error raised when factory is not able to create requested component.
     /// </summary>
-    /// See <see cref="ApplicationException"/>, <see cref="InternalException"/>
+    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html">ApplicationException</a>, 
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_errors_1_1_internal_exception.html">InternalException</a>
 #if CORE_NET
     [DataContract]
 #else

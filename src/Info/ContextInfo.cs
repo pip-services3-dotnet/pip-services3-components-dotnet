@@ -14,10 +14,10 @@ namespace PipServices.Components.Info
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// name: 					the context (container or process) name
-    /// description: 		   	human-readable description of the context
-    /// properties: 			entire section of additional descriptive properties
-    /// ...
+    /// - name: 					the context (container or process) name
+    /// - description: 		   	human-readable description of the context
+    /// - properties: 			entire section of additional descriptive properties
+    /// - ...
     /// </summary>
     /// <example>
     /// <code>

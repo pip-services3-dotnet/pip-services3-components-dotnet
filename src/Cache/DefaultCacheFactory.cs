@@ -6,7 +6,8 @@ namespace PipServices.Components.Cache
     /// <summary>
     /// Creates ICache components by their descriptors.
     /// </summary>
-    /// See <see cref="Factory"/>, <see cref="ICache"/>, <see cref="MemoryCache"/>, <see cref="NullCache"/>
+    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_build_1_1_factory.html">Factory</a>, 
+    /// <see cref="ICache"/>, <see cref="MemoryCache"/>, <see cref="NullCache"/>
     public class DefaultCacheFactory : Factory
     {
         public static Descriptor Descriptor = new Descriptor("pip-services", "factory", "cache", "default", "1.0");

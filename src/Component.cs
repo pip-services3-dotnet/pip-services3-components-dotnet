@@ -12,13 +12,14 @@ namespace PipServices.Components
     /// ### Configuration parameters ###
     /// 
     /// dependencies:
-    /// [dependency name 1]: Dependency 1 locator (descriptor)
-    /// ...
-    /// [dependency name N]: Dependency N locator (descriptor)
+    /// - [dependency name 1]: Dependency 1 locator (descriptor)
+    /// - ...
+    /// - [dependency name N]: Dependency N locator (descriptor)
+    /// 
     /// ### References ###
     /// 
-    /// - *:counters:*:*:1.0       (optional)[[ICounters]] components to pass collected measurements
-    /// - *:logger:*:*:1.0         (optional)[[ILogger]] components to pass log messages 
+    /// - *:counters:*:*:1.0       (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html">ICounters</a> components to pass collected measurements
+    /// - *:logger:*:*:1.0         (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to pass log messages 
     /// - ...                      References must match configured dependencies.
     /// </summary>
     public class Component: IConfigurable, IReferenceable

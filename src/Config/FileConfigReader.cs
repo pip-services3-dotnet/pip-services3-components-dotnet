@@ -11,7 +11,7 @@ namespace PipServices.Components.Config
     /// 
     /// - path:          path to configuration file
     /// - parameters:            this entire section is used as template parameters
-    /// ...
+    /// - ...
     /// </summary>
     /// See <see cref="IConfigReader"/>, <see cref="ConfigReader"/>
     public abstract class FileConfigReader : ConfigReader

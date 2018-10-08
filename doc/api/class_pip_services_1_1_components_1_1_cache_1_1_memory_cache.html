@@ -171,8 +171,11 @@ readonly object&#160;</td><td class="memItemRight" valign="bottom"><b>_lock</b> 
 <div class="textblock"><p><a class="el" href="namespace_pip_services_1_1_components_1_1_cache.html">Cache</a> that stores values in the process memory. </p>
 <p>Remember: This implementation is not suitable for synchronization of distributed processes.</p>
 <h3>Configuration parameters</h3>
-<p>options: timeout: default caching timeout in milliseconds (default: 1 minute) max_size: maximum number of values stored in this cache (default: 1000) <br />
-</p>
+<p>options:</p><ul>
+<li>timeout: default caching timeout in milliseconds (default: 1 minute)</li>
+<li>max_size: maximum number of values stored in this cache (default: 1000) <br />
+</li>
+</ul>
 <div class="fragment"><div class="line">var cache = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_components_1_1_cache_1_1_memory_cache.html#a3bdf05d6839aec89f8e593ad54ba99b2">MemoryCache</a>();</div><div class="line">...</div><div class="line">cache.StoreAsync(<span class="stringliteral">&quot;123&quot;</span>, <span class="stringliteral">&quot;key1&quot;</span>, <span class="stringliteral">&quot;ABC&quot;</span>, 0);</div><div class="line">...</div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_components_1_1_cache_1_1_i_cache.html" title="Interface for caches that are used to cache values to improve performance. ">ICache</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3bdf05d6839aec89f8e593ad54ba99b2"></a>

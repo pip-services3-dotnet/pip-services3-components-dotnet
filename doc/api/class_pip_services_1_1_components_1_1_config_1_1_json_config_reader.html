@@ -145,7 +145,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p><a class="el" href="namespace_pip_services_1_1_components_1_1_config.html">Config</a> reader that reads configuration from JSON file. </p>
 <p>The reader supports parameterization using Handlebars template engine.</p>
 <h3>Configuration parameters</h3>
-<p>path: path to configuration file parameters: this entire section is used as template parameters ... </p>
+<ul>
+<li>path: path to configuration file</li>
+<li>parameters: this entire section is used as template parameters</li>
+<li>... </li>
+</ul>
 <div class="fragment"><div class="line">======== config.json ======</div><div class="line">&lt;h1&gt;{ <span class="stringliteral">&quot;key1&quot;</span>: <span class="stringliteral">&quot;{{KEY1_VALUE}}&quot;</span>, <span class="stringliteral">&quot;key2&quot;</span>: <span class="stringliteral">&quot;{{KEY2_VALUE}}&quot;</span> }</div><div class="line">&lt;/h1&gt;</div><div class="line"></div><div class="line">var configReader = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_components_1_1_config_1_1_json_config_reader.html#a1f7924c0321f8fb6fcb86f96f9cc3942">JsonConfigReader</a>(<span class="stringliteral">&quot;config.json&quot;</span>);</div><div class="line">var parameters = ConfigParams.FromTuples(<span class="stringliteral">&quot;KEY1_VALUE&quot;</span>, 123, <span class="stringliteral">&quot;KEY2_VALUE&quot;</span>, <span class="stringliteral">&quot;ABC&quot;</span>);</div><div class="line">configReader.ReadConfig(<span class="stringliteral">&quot;123&quot;</span>, parameters);</div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_components_1_1_config_1_1_i_config_reader.html" title="Interface for configuration readers that retrieve configuration from various sources and make it avai...">IConfigReader</a>, <a class="el" href="class_pip_services_1_1_components_1_1_config_1_1_file_config_reader.html" title="Abstract config reader that reads configuration from a file. Child classes add support for config fil...">FileConfigReader</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1f7924c0321f8fb6fcb86f96f9cc3942"></a>

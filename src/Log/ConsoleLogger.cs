@@ -12,12 +12,12 @@ namespace PipServices.Components.Log
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// level:             maximum log level to capture
-    /// source:            source(context) name
+    /// - level:             maximum log level to capture
+    /// - source:            source(context) name
     /// 
     /// ### References ###
     /// 
-    /// - *:context-info:*:*:1.0     (optional) ContextInfo to detect the context id and specify counters source
+    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
     /// </summary>
     /// <example>
     /// <code>

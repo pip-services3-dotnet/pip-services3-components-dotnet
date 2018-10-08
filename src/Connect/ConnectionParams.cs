@@ -12,11 +12,11 @@ namespace PipServices.Components.Connect
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// discovery_key: key to retrieve parameters from discovery service 
-    /// protocol:      connection protocol like http, https, tcp, udp
-    /// host:          host name or IP address 
-    /// port:          port number
-    /// uri:           resource URI or connection string with all parameters in it
+    /// - discovery_key: key to retrieve parameters from discovery service 
+    /// - protocol:      connection protocol like http, https, tcp, udp
+    /// - host:          host name or IP address 
+    /// - port:          port number
+    /// - uri:           resource URI or connection string with all parameters in it
     /// 
     /// In addition to standard parameters ConnectionParams may contain any number of custom parameters
     /// </summary>
@@ -36,7 +36,10 @@ namespace PipServices.Components.Connect
     /// var cluster = connection.GetAsNullableString("cluster");     // Result: "mycluster" 
     /// </code>
     /// </example>
-    /// See <see cref="ConfigParams"/>, <see cref="CredentialParams"/>, <see cref="ConnectionResolver"/>, <see cref="IDiscovery"/>
+    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>, 
+    /// <see cref="ConnectionResolver"/>, 
+    /// <see cref="IDiscovery"/>
     public class ConnectionParams : ConfigParams
     {
         /// <summary>

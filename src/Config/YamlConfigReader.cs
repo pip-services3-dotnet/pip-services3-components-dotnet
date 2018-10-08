@@ -15,8 +15,8 @@ namespace PipServices.Components.Config
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// path:          path to configuration file
-    /// parameters:    this entire section is used as template parameters
+    /// - path:          path to configuration file
+    /// - parameters:    this entire section is used as template parameters
     /// ...
     /// </summary>
     /// <example>

@@ -6,7 +6,8 @@ namespace PipServices.Components.Count
     /// <summary>
     /// Creates ICounters components by their descriptors.
     /// </summary>
-    /// See <see cref="Factory"/>, <see cref="NullCounters"/>, <see cref="LogCounters"/>, <see cref="CompositeCounters"/>
+    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_build_1_1_factory.html">Factory</a>, 
+    /// <see cref="NullCounters"/>, <see cref="LogCounters"/>, <see cref="CompositeCounters"/>
     public class DefaultCountersFactory : Factory
     {
         public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "counters", "default", "1.0");

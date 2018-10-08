@@ -9,10 +9,10 @@ namespace PipServices.Components.Cache
     /// <summary>
     /// Abstract cache class to provide common cache functionality
     /// </summary>
-    /// <seealso cref="PipServices.Components.Cache.ICache" />
-    /// <seealso cref="PipServices.Commons.Config.IConfigurable" />
-    /// <seealso cref="PipServices.Commons.Refer.IReferenceable" />
-    /// <seealso cref="PipServices.Commons.Run.IOpenable" />
+    /// See <see cref="ICache" />, 
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_config_1_1_i_configurable.html">IConfigurable</a>,
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_refer_1_1_i_referenceable.html">IReferenceable</a>,
+    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_run_1_1_i_openable.html">IOpenable</a>
     public abstract class AbstractCache : ICache, IConfigurable, IReferenceable, IOpenable
     {
         private readonly long DefaultTimeout = 60000; // 1 min

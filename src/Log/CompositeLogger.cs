@@ -11,7 +11,7 @@ namespace PipServices.Components.Log
     /// 
     /// ### References ###
     /// 
-    /// - <code>\*:logger:\*:\*:1.0</code> 	(optional)[[ILogger]] components to pass log messages
+    /// - *:logger:*:*:1.0 	(optional) ILogger components to pass log messages
     /// </summary>
     /// <example>
     /// <code>

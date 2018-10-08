@@ -183,10 +183,13 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>_source</b> = null<
 <div class="textblock"><p><a class="el" href="class_pip_services_1_1_components_1_1_log_1_1_logger.html" title="Abstract logger that captures and formats log messages. Child classes take the captured messages and ...">Logger</a> that writes log messages to console. </p>
 <p>Errors are written to standard err stream and all other messages to standard out stream.</p>
 <h3>Configuration parameters</h3>
-<p>level: maximum log level to capture source: source(context) name</p>
+<ul>
+<li>level: maximum log level to capture</li>
+<li>source: source(context) name</li>
+</ul>
 <h3>References</h3>
 <ul>
-<li>*:context-info:*:*:1.0 (optional) ContextInfo to detect the context id and specify counters source </li>
+<li>*:context-info:*:*:1.0 (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source </li>
 </ul>
 <div class="fragment"><div class="line">var logger = <span class="keyword">new</span> ConsoleLogger();</div><div class="line">logger.SetLevel(<a class="code" href="namespace_pip_services_1_1_components_1_1_log.html#a419af91f9007778fb3af3760cc737674">LogLevel</a>.debug);</div><div class="line"></div><div class="line">logger.Error(<span class="stringliteral">&quot;123&quot;</span>, ex, <span class="stringliteral">&quot;Error occured: %s&quot;</span>, ex.message);</div><div class="line">logger.Debug(<span class="stringliteral">&quot;123&quot;</span>, <span class="stringliteral">&quot;Everything is OK.&quot;</span>);</div></div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="acc96523c02742d1f7095fa4a47a0be93"></a>

@@ -10,7 +10,7 @@ namespace PipServices.Components.Lock
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// - __options:__
+    /// options:
     /// - retry_timeout:   timeout in milliseconds to retry lock acquisition. (Default: 100)
     /// </summary>
     /// <example>

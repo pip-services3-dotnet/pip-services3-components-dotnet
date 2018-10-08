@@ -15,14 +15,14 @@ namespace PipServices.Components.Auth
     /// ### Configuration parameters ###
     /// 
     /// credential:    
-    /// store_key:                   (optional) a key to retrieve the credentials from[[ICredentialStore]]
-    /// ...                          other credential parameters
+    /// - store_key:                   (optional) a key to retrieve the credentials from ICredentialStore
+    /// - ...                          other credential parameters
     /// 
     /// credentials:                   alternative to credential
-    /// [credential params 1]:       first credential parameters
-    /// ...
-    /// [credential params N]:       Nth credential parameters
-    /// ...
+    /// - [credential params 1]:       first credential parameters
+    /// - ...
+    /// - [credential params N]:       Nth credential parameters
+    /// - ...
     /// 
     /// ### References ###
     /// - *:credential-store:*:*:1.0     (optional) Credential stores to resolve credentials

@@ -6,7 +6,8 @@ namespace PipServices.Components.Log
     /// <summary>
     /// Creates ILogger components by their descriptors.
     /// </summary>
-    /// See <see cref="Factory"/>, <see cref="NullLogger"/>, <see cref="ConsoleLogger"/>, <see cref="CompositeLogger"/>
+    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_build_1_1_factory.html">Factory</a>, 
+    /// <see cref="NullLogger"/>, <see cref="ConsoleLogger"/>, <see cref="CompositeLogger"/>
     public class DefaultLoggerFactory : Factory
     {
         public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "logger", "default", "1.0");

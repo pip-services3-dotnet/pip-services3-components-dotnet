@@ -149,7 +149,12 @@ StringValueMap&#160;</td><td class="memItemRight" valign="bottom"><b>_properties
 <div class="textblock"><p>Context information component that provides detail information about execution context: container or/and process. </p>
 <p>Most often <a class="el" href="class_pip_services_1_1_components_1_1_info_1_1_context_info.html" title="Context information component that provides detail information about execution context: container or/...">ContextInfo</a> is used by logging and performance counters to identify source of the collected logs and metrics.</p>
 <h3>Configuration parameters</h3>
-<p>name: the context (container or process) name description: human-readable description of the context properties: entire section of additional descriptive properties ... </p>
+<ul>
+<li>name: the context (container or process) name</li>
+<li>description: human-readable description of the context</li>
+<li>properties: entire section of additional descriptive properties</li>
+<li>... </li>
+</ul>
 <div class="fragment"><div class="line">var contextInfo = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_components_1_1_info_1_1_context_info.html#a8f40ef90ba15a1e71086ea4dedae394b">ContextInfo</a>();</div><div class="line">contextInfo.Configure(ConfigParams.FromTuples(</div><div class="line"><span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;MyMicroservice&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;description&quot;</span>, <span class="stringliteral">&quot;My first microservice&quot;</span></div><div class="line">));</div><div class="line"></div><div class="line">context.Name;           <span class="comment">// Result: &quot;MyMicroservice&quot;</span></div><div class="line">context.ContextId;      <span class="comment">// Possible result: &quot;mylaptop&quot;</span></div><div class="line">context.StartTime;      <span class="comment">// Possible result: 2018-01-01:22:12:23.45Z</span></div><div class="line">context.Uptime;         <span class="comment">// Possible result: 3454345</span></div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8f40ef90ba15a1e71086ea4dedae394b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f40ef90ba15a1e71086ea4dedae394b">&#9670;&nbsp;</a></span>ContextInfo() <span class="overload">[1/2]</span></h2>

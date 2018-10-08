@@ -8,7 +8,8 @@ namespace PipServices.Components.Lock
 {
     /// <summary>
     /// Abstract lock that implements default lock acquisition routine.
-    /// - __options:__
+    /// 
+    /// options:
     /// - retry_timeout:   timeout in milliseconds to retry lock acquisition. (Default: 100)
     /// </summary>
     /// See <see cref="ILock"/>

@@ -138,11 +138,18 @@ IReferences&#160;</td><td class="memItemRight" valign="bottom"><b>_references</b
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper class to retrieve component connections. </p>
-<p>If connections are configured to be retrieved from <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a>, it automatically locates <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a> in component references and retrieve connections from there using discovery_key parameter.</p>
+<p>If connections are configured to be retrieved from <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a>, it automatically locates <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a> in component references and retrieve connections from there using <code>discovery_key</code> parameter.</p>
 <h3>Configuration parameters</h3>
 <p>connection: <br />
-discovery_key: (optional) a key to retrieve the connection from <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a> ... other connection parameters</p>
-<p>connections: alternative to connection [connection params 1]: first connection parameters ... [connection params N]: Nth connection parameters ...</p>
+- discovery_key: (optional) a key to retrieve the connection from <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a></p><ul>
+<li>... other connection parameters</li>
+</ul>
+<p>connections: alternative to connection</p><ul>
+<li>[connection params 1]: first connection parameters</li>
+<li>...</li>
+<li>[connection params N]: Nth connection parameters</li>
+<li>...</li>
+</ul>
 <h3>References</h3>
 <ul>
 <li>*:discovery:*:*:1.0 (optional) <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a> services to resolve connections </li>

@@ -10,10 +10,10 @@ namespace PipServices.Components.Auth
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// [credential key 1]:            
-    /// ...                          credential parameters for key 1
-    /// [credential key 2]:            
-    /// ...                          credential parameters for key N
+    /// - [credential key 1]:            
+    /// - ...                          credential parameters for key 1
+    /// - [credential key 2]:            
+    /// - ...                          credential parameters for key N
     /// </summary>
     /// <example>
     /// <code>

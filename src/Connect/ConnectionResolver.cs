@@ -11,19 +11,19 @@ namespace PipServices.Components.Connect
     /// 
     /// If connections are configured to be retrieved from IDiscovery,
     /// it automatically locates IDiscovery in component references
-    /// and retrieve connections from there using discovery_key parameter.
+    /// and retrieve connections from there using <c>discovery_key</c> parameter.
     /// 
     /// ### Configuration parameters ###
     /// 
     /// connection:    
-    /// discovery_key:               (optional) a key to retrieve the connection from IDiscovery
-    /// ...                          other connection parameters
+    /// - discovery_key:               (optional) a key to retrieve the connection from IDiscovery
+    /// - ...                          other connection parameters
     /// 
     /// connections:                   alternative to connection
-    /// [connection params 1]:       first connection parameters
-    /// ...
-    /// [connection params N]:       Nth connection parameters
-    /// ...
+    /// - [connection params 1]:       first connection parameters
+    /// - ...
+    /// - [connection params N]:       Nth connection parameters
+    /// - ...
     /// 
     /// ### References ###
     /// 
