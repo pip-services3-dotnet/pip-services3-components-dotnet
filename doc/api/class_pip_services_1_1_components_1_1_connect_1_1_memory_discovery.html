@@ -143,10 +143,10 @@ object&#160;</td><td class="memItemRight" valign="bottom"><b>_lock</b> = new obj
 <div class="textblock"><p>Discovery service that keeps connections in memory. </p>
 <h3>Configuration parameters</h3>
 <ul>
-<li>[connection key 1]: <br />
-- ... connection parameters for key 1</li>
-<li>[connection key 2]: <br />
-- ... connection parameters for key N </li>
+<li>[connection key 1]:</li>
+<li>... connection parameters for key 1</li>
+<li>[connection key 2]:</li>
+<li>... connection parameters for key N </li>
 </ul>
 <div class="fragment"><div class="line">ConfigParams config = ConfigParams.fromTuples(</div><div class="line"><span class="stringliteral">&quot;key1.host&quot;</span>, <span class="stringliteral">&quot;10.1.1.100&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;key1.port&quot;</span>, <span class="stringliteral">&quot;8080&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;key2.host&quot;</span>, <span class="stringliteral">&quot;10.1.1.100&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;key2.port&quot;</span>, <span class="stringliteral">&quot;8082&quot;</span></div><div class="line">);</div><div class="line"></div><div class="line"><a class="code" href="class_pip_services_1_1_components_1_1_connect_1_1_memory_discovery.html#aecaf70ce967dc5095f356889816ee8d7">MemoryDiscovery</a> discovery = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_components_1_1_connect_1_1_memory_discovery.html#aecaf70ce967dc5095f356889816ee8d7">MemoryDiscovery</a>();</div><div class="line">discovery.readConnections(config);</div><div class="line">discovery.resolve(<span class="stringliteral">&quot;123&quot;</span>, <span class="stringliteral">&quot;key1&quot;</span>);</div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a>, <a class="el" href="class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>

@@ -13,7 +13,8 @@ namespace PipServices.Components.Log
     /// 
     /// - level:             maximum log level to capture
     /// - source:            source(context) name
-    /// - options:
+    /// 
+    /// options:
     /// - interval:        interval in milliseconds to save log messages(default: 10 seconds)
     /// - max_cache_size:  maximum number of messages stored in this cache (default: 100)        
     /// 

@@ -9,9 +9,9 @@ namespace PipServices.Components.Connect
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// - [connection key 1]:            
+    /// - [connection key 1]:
     /// - ...                          connection parameters for key 1
-    /// - [connection key 2]:            
+    /// - [connection key 2]:
     /// - ...                          connection parameters for key N
     /// </summary>
     /// <example>

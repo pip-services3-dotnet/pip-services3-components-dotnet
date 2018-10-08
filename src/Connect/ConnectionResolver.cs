@@ -15,7 +15,7 @@ namespace PipServices.Components.Connect
     /// 
     /// ### Configuration parameters ###
     /// 
-    /// connection:    
+    /// connection:
     /// - discovery_key:               (optional) a key to retrieve the connection from IDiscovery
     /// - ...                          other connection parameters
     /// 
