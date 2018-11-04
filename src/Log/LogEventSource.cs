@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     [EventSource(Name = "log")]
     public class LogEventSource : EventSource

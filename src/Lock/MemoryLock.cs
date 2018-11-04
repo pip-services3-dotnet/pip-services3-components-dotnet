@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PipServices.Components.Lock
+namespace PipServices3.Components.Lock
 {
     /// <summary>
     /// Lock that is used to synchronize execution within one process using shared memory.

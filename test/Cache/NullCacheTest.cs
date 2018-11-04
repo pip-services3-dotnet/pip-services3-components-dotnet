@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     //[TestClass]
     public sealed class NullCacheTest

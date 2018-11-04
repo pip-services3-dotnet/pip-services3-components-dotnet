@@ -1,18 +1,18 @@
-﻿using PipServices.Commons.Config;
-using PipServices.Commons.Refer;
-using PipServices.Commons.Run;
+﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Refer;
+using PipServices3.Commons.Run;
 
 using System.Threading.Tasks;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     /// <summary>
     /// Abstract cache class to provide common cache functionality
     /// </summary>
     /// See <see cref="ICache" />, 
-    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_config_1_1_i_configurable.html">IConfigurable</a>,
-    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_refer_1_1_i_referenceable.html">IReferenceable</a>,
-    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_run_1_1_i_openable.html">IOpenable</a>
+    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_config_1_1_i_configurable.html">IConfigurable</a>,
+    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_refer_1_1_i_referenceable.html">IReferenceable</a>,
+    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/interface_pip_services_1_1_commons_1_1_run_1_1_i_openable.html">IOpenable</a>
     public abstract class AbstractCache : ICache, IConfigurable, IReferenceable, IOpenable
     {
         private readonly long DefaultTimeout = 60000; // 1 min

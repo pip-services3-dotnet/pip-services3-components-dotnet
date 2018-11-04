@@ -56,7 +56,7 @@ Cleaned up and simplified dependency management and object factories.
 
 ### Breaking Changes
 * Refactored **refer** package. Removed IDescriptable and ILocateable interface. Made locator a mandatory requirement to place component into references.
-* Moved **ManagedReferences** to **pip-services-container**
+* Moved **ManagedReferences** to **pip-services3-container**
 
 ## <a name="1.0.3-1.0.40"></a> 1.0.3-1.0.45 (2017-01-07)
 

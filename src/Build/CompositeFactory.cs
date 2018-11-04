@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PipServices.Components.Build
+namespace PipServices3.Components.Build
 {
     /// <summary>
     /// Aggregates multiple factories into a single factory component.

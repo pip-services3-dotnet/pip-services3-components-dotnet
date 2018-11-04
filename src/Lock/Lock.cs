@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading;
 
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Errors;
 
-namespace PipServices.Components.Lock
+namespace PipServices3.Components.Lock
 {
     /// <summary>
     /// Abstract lock that implements default lock acquisition routine.

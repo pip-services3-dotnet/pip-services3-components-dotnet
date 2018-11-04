@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using PipServices.Commons.Config;
+using PipServices3.Commons.Config;
 using Xunit;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     //[TestClass]
     public class MemoryCacheTest

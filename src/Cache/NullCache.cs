@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     /// <summary>
     /// Dummy cache implementation that doesn't do anything.

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     public sealed class LoggerFixture
     {

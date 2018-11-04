@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Data object to store measurement for a performance counter.

@@ -1,4 +1,4 @@
-﻿namespace PipServices.Components.Log
+﻿namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Standard log levels.

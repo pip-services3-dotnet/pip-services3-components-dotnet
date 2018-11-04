@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace PipServices.Components.Lock
+namespace PipServices3.Components.Lock
 {
     //[TestClass]
     public class MemoryLockTest

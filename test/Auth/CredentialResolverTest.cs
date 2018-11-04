@@ -1,10 +1,10 @@
-﻿using PipServices.Commons.Config;
-using PipServices.Commons.Refer;
+﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Refer;
 using System;
 using System.Linq;
 using Xunit;
 
-namespace PipServices.Components.Auth
+namespace PipServices3.Components.Auth
 {
     //[TestClass]
     public sealed class CredentialResolverTest

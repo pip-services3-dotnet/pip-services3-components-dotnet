@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     /// <summary>
     /// Data object to store cached values with their keys used by MemoryCache

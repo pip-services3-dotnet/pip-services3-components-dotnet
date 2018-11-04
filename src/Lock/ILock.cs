@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Components.Lock
+namespace PipServices3.Components.Lock
 {
     /// <summary>
     /// Interface for locks to synchronize work or parallel processes and to prevent collisions.

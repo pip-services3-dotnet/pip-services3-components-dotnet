@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 
-using PipServices.Commons.Errors;
-using PipServices.Commons.Config;
-using PipServices.Commons.Convert;
+using PipServices3.Commons.Errors;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Convert;
 
-namespace PipServices.Components.Config
+namespace PipServices3.Components.Config
 {
     /// <summary>
     /// Config reader that reads configuration from JSON file.

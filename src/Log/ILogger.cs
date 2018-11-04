@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Interface for logger components that capture execution log messages.

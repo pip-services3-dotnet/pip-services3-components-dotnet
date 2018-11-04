@@ -1,7 +1,7 @@
 ﻿using System;
-using PipServices.Commons.Refer;
+using PipServices3.Commons.Refer;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Dummy implementation of performance counters that doesn't do anything.

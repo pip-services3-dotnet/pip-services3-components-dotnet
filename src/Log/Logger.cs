@@ -1,10 +1,10 @@
 ﻿using System;
-using PipServices.Commons.Config;
+using PipServices3.Commons.Config;
 using System.Text;
-using PipServices.Commons.Refer;
-using PipServices.Components.Info;
+using PipServices3.Commons.Refer;
+using PipServices3.Components.Info;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Abstract logger that captures and formats log messages.
@@ -19,7 +19,7 @@ namespace PipServices.Components.Log
     /// 
     /// ### References ###
     /// 
-    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
+    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
     /// </summary>
     /// See <see cref="ILogger"/>
     public abstract class Logger : ILogger, IReconfigurable, IReferenceable
@@ -69,7 +69,7 @@ namespace PipServices.Components.Log
         public virtual void SetReferences(IReferences references)
         {
             var contextInfo = references.GetOneOptional<ContextInfo>(
-                new Descriptor("pip-services", "context-info", "*", "*", "1.0"));
+                new Descriptor("pip-services3", "context-info", "*", "*", "1.0"));
             if (contextInfo != null && _source == null)
                 _source = contextInfo.Name;
         }

@@ -1,4 +1,4 @@
-﻿namespace PipServices.Components.Build
+﻿namespace PipServices3.Components.Build
 {
     /// <summary>
     /// Interface for component factories.

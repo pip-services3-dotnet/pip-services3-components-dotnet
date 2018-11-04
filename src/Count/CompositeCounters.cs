@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using PipServices.Commons.Refer;
+using PipServices3.Commons.Refer;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Aggregates all counters from component references under a single component.

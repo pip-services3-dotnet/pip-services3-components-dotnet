@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Errors;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Abstract implementation of performance counters that measures and stores counters in memory.

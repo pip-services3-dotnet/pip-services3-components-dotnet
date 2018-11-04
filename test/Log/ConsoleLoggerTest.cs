@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     //[TestClass]
     public sealed class ConsoleLoggerTest

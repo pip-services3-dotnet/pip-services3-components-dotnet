@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Reflect;
+﻿using PipServices3.Commons.Reflect;
 using System;
 using System.Collections.Generic;
 
-namespace PipServices.Components.Build
+namespace PipServices3.Components.Build
 {
     /// <summary>
     /// Basic component factory that creates components using registered types and factory functions.

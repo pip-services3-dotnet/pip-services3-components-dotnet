@@ -1,7 +1,7 @@
 ﻿using System;
-using PipServices.Commons.Config;
+using PipServices3.Commons.Config;
 
-namespace PipServices.Components.Config
+namespace PipServices3.Components.Config
 {
     public abstract class CachedConfigReader: IConfigReader, IReconfigurable
     {

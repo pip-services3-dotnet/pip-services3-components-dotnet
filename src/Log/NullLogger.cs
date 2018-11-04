@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Dummy implementation of logger that doesn't do anything.

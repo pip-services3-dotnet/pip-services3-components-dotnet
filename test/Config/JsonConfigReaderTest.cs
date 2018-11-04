@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Config;
+﻿using PipServices3.Commons.Config;
 
 using Xunit;
 
-namespace PipServices.Components.Config
+namespace PipServices3.Components.Config
 {
     //[TestClass]
     public class JsonConfigReaderTest

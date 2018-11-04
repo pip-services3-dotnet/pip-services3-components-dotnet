@@ -1,7 +1,7 @@
-﻿using PipServices.Components.Build;
-using PipServices.Commons.Refer;
+﻿using PipServices3.Components.Build;
+using PipServices3.Commons.Refer;
 
-namespace PipServices.Components.Auth
+namespace PipServices3.Components.Auth
 {
     /// <summary>
     /// Creates ICredentialStore components by their descriptors.
@@ -9,9 +9,9 @@ namespace PipServices.Components.Auth
     /// See <see cref="IFactory"/>, <see cref="ICredentialStore"/>, <see cref="MemoryCredentialStore"/>
     public class DefaultCredentialStoreFactory: Factory
     {
-        public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "credential-store", "default", "1.0");
-        public static readonly Descriptor MemoryCredentialStoreDescriptor = new Descriptor("pip-services", "credential-store", "memory", "*", "1.0");
-        public static readonly Descriptor MemoryCredentialStoreDescriptor2 = new Descriptor("pip-services-commons", "credential-store", "memory", "*", "1.0");
+        public static readonly Descriptor Descriptor = new Descriptor("pip-services3", "factory", "credential-store", "default", "1.0");
+        public static readonly Descriptor MemoryCredentialStoreDescriptor = new Descriptor("pip-services3", "credential-store", "memory", "*", "1.0");
+        public static readonly Descriptor MemoryCredentialStoreDescriptor2 = new Descriptor("pip-services3-commons", "credential-store", "memory", "*", "1.0");
 
         /// <summary>
         /// Create a new instance of the factory.

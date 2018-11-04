@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Convert;
+﻿using PipServices3.Commons.Convert;
 using System;
 using System.Text;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Diagnostic logger.

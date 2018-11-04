@@ -1,9 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
-using PipServices.Commons.Config;
-using PipServices.Commons.Data;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Data;
 
-namespace PipServices.Components.Info
+namespace PipServices3.Components.Info
 {
     /// <summary>
     /// Context information component that provides detail information

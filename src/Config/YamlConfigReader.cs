@@ -1,12 +1,12 @@
 ﻿using System;
 using System.IO;
 
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Errors;
 
 using YamlDotNet.Serialization;
 
-namespace PipServices.Components.Config
+namespace PipServices3.Components.Config
 {
     /// <summary>
     /// Config reader that reads configuration from YAML file.
@@ -32,7 +32,7 @@ namespace PipServices.Components.Config
     /// configReader.ReadConfig("123", parameters);
     /// </code>
     /// </example>
-    /// <seealso cref="PipServices.Commons.Config.FileConfigReader" />
+    /// <seealso cref="PipServices3.Commons.Config.FileConfigReader" />
     public class YamlConfigReader: FileConfigReader
     {
         /// <summary>

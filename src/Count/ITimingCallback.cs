@@ -1,4 +1,4 @@
-﻿namespace PipServices.Components.Count
+﻿namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Interface for a callback to end measurement of execution elapsed time.

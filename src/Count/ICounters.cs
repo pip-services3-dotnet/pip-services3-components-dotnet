@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Interface for performance counters that measure execution metrics.

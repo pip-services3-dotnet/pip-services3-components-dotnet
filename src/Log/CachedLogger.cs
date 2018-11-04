@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using PipServices.Commons.Config;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Errors;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Abstract logger that caches captured log messages in memory and periodically dumps them.
@@ -20,7 +20,7 @@ namespace PipServices.Components.Log
     /// 
     /// ### References ###
     /// 
-    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
+    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
     /// </summary>
     /// See <see cref="ILogger"/>, <see cref="Logger"/>, <see cref="LogMessage"/>
     public abstract class CachedLogger : Logger, IReconfigurable

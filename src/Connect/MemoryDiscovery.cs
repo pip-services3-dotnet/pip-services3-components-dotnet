@@ -1,8 +1,8 @@
-﻿using PipServices.Commons.Config;
+﻿using PipServices3.Commons.Config;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Components.Connect
+namespace PipServices3.Components.Connect
 {
     /// <summary>
     /// Discovery service that keeps connections in memory.

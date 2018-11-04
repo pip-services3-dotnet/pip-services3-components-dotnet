@@ -1,14 +1,14 @@
-﻿using PipServices.Commons.Errors;
+﻿using PipServices3.Commons.Errors;
 using System;
 using System.Runtime.Serialization;
 
-namespace PipServices.Components.Build
+namespace PipServices3.Components.Build
 {
     /// <summary>
     /// Error raised when factory is not able to create requested component.
     /// </summary>
-    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html">ApplicationException</a>, 
-    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_errors_1_1_internal_exception.html">InternalException</a>
+    /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_errors_1_1_application_exception.html">ApplicationException</a>, 
+    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_errors_1_1_internal_exception.html">InternalException</a>
 #if CORE_NET
     [DataContract]
 #else

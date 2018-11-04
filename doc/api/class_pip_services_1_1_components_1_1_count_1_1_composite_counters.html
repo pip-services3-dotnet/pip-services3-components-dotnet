@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Pip-Services-Components-Dotnet: PipServices.Components.Count.CompositeCounters Class Reference</title>
+<title>Pip-Services-Components-Dotnet: PipServices3.Components.Count.CompositeCounters Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespace_pip_services.html">PipServices</a></li><li class="navelem"><a class="el" href="namespace_pip_services_1_1_components.html">Components</a></li><li class="navelem"><a class="el" href="namespace_pip_services_1_1_components_1_1_count.html">Count</a></li><li class="navelem"><a class="el" href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.html">CompositeCounters</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespace_pip_services.html">PipServices3</a></li><li class="navelem"><a class="el" href="namespace_pip_services_1_1_components.html">Components</a></li><li class="navelem"><a class="el" href="namespace_pip_services_1_1_components_1_1_count.html">Count</a></li><li class="navelem"><a class="el" href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.html">CompositeCounters</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,20 +80,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">PipServices.Components.Count.CompositeCounters Class Reference</div>  </div>
+<div class="title">PipServices3.Components.Count.CompositeCounters Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Aggregates all counters from component references under a single component.  
  <a href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.html#details">More...</a></p>
 <div class="dynheader">
-Inheritance diagram for PipServices.Components.Count.CompositeCounters:</div>
+Inheritance diagram for PipServices3.Components.Count.CompositeCounters:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.png" usemap="#PipServices.Components.Count.CompositeCounters_map" alt=""/>
-  <map id="PipServices.Components.Count.CompositeCounters_map" name="PipServices.Components.Count.CompositeCounters_map">
-<area href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html" title="Interface for performance counters that measure execution metrics. " alt="PipServices.Components.Count.ICounters" shape="rect" coords="0,0,303,24"/>
-<area href="interface_pip_services_1_1_components_1_1_count_1_1_i_timing_callback.html" title="Interface for a callback to end measurement of execution elapsed time. " alt="PipServices.Components.Count.ITimingCallback" shape="rect" coords="313,0,616,24"/>
+  <img src="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.png" usemap="#PipServices3.Components.Count.CompositeCounters_map" alt=""/>
+  <map id="PipServices3.Components.Count.CompositeCounters_map" name="PipServices3.Components.Count.CompositeCounters_map">
+<area href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html" title="Interface for performance counters that measure execution metrics. " alt="PipServices3.Components.Count.ICounters" shape="rect" coords="0,0,303,24"/>
+<area href="interface_pip_services_1_1_components_1_1_count_1_1_i_timing_callback.html" title="Interface for a callback to end measurement of execution elapsed time. " alt="PipServices3.Components.Count.ITimingCallback" shape="rect" coords="313,0,616,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -141,7 +141,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <p>It allows to capture metrics and conveniently send them to multiple destinations.</p>
 <h3>References</h3>
 <ul>
-<li>*:counters:*:*:1.0 (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html">ICounters</a> components to pass collected measurements </li>
+<li>*:counters:*:*:1.0 (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html">ICounters</a> components to pass collected measurements </li>
 </ul>
 <div class="fragment"><div class="line"><span class="keyword">class </span>MyComponent: IReferenceable </div><div class="line">{</div><div class="line">    <a class="code" href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.html#a04246048af1a4a3efc866156e597ffb8">CompositeCounters</a> _counters = <span class="keyword">new</span> <a class="code" href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.html#a04246048af1a4a3efc866156e597ffb8">CompositeCounters</a>();</div><div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_pip_services_1_1_components_1_1_count_1_1_composite_counters.html#a54ba9bf787ea32175dbfee962dbb409a">SetReferences</a>(IReferences references)</div><div class="line">    {</div><div class="line">        this._counters.SetReferences(references);</div><div class="line">        ...</div><div class="line">    }</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> MyMethod()</div><div class="line">    {</div><div class="line">        this._counters.Increment(<span class="stringliteral">&quot;mycomponent.mymethod.calls&quot;</span>);</div><div class="line">        var timing = this._counters.BeginTiming(<span class="stringliteral">&quot;mycomponent.mymethod.exec_time&quot;</span>);</div><div class="line">        <span class="keywordflow">try</span></div><div class="line">        {</div><div class="line">            ...</div><div class="line">        }</div><div class="line">        <span class="keywordflow">finally</span></div><div class="line">        {</div><div class="line">            timing.EndTiming();</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --> <p>See <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html" title="Interface for performance counters that measure execution metrics. ">ICounters</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -152,7 +152,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">PipServices.Components.Count.CompositeCounters.CompositeCounters </td>
+          <td class="memname">PipServices3.Components.Count.CompositeCounters.CompositeCounters </td>
           <td>(</td>
           <td class="paramtype">IReferences&#160;</td>
           <td class="paramname"><em>references</em> = <code>null</code></td><td>)</td>
@@ -179,7 +179,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_pip_services_1_1_components_1_1_count_1_1_timing.html">Timing</a> PipServices.Components.Count.CompositeCounters.BeginTiming </td>
+          <td class="memname"><a class="el" href="class_pip_services_1_1_components_1_1_count_1_1_timing.html">Timing</a> PipServices3.Components.Count.CompositeCounters.BeginTiming </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -197,7 +197,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="class_pip_services_1_1_components_1_1_count_1_1_timing.html" title="Callback object returned by ICounters.BeginTiming(string) to end timing of execution block and update...">Timing</a> callback object to end timing.</dd></dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#af44a2c3c1247d646be39340f93f8c324">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#af44a2c3c1247d646be39340f93f8c324">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>
@@ -208,7 +208,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.EndTiming </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.EndTiming </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -236,7 +236,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_timing_callback.html#a2f02adae37b01f7aa63454b0724907eb">PipServices.Components.Count.ITimingCallback</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_timing_callback.html#a2f02adae37b01f7aa63454b0724907eb">PipServices3.Components.Count.ITimingCallback</a>.</p>
 
 </div>
 </div>
@@ -247,7 +247,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.Increment </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.Increment </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -275,7 +275,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a2b032b30f203ce5aba49bd298c03f60c">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a2b032b30f203ce5aba49bd298c03f60c">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>
@@ -286,7 +286,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.IncrementOne </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.IncrementOne </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -303,7 +303,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a6e59a8d8abc54884d4febeb948ad3e0b">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a6e59a8d8abc54884d4febeb948ad3e0b">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>
@@ -314,7 +314,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.Last </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.Last </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -342,7 +342,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a23955431623ab9c901ab26611c99d6a8">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a23955431623ab9c901ab26611c99d6a8">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>
@@ -356,7 +356,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void PipServices.Components.Count.CompositeCounters.SetReferences </td>
+          <td class="memname">virtual void PipServices3.Components.Count.CompositeCounters.SetReferences </td>
           <td>(</td>
           <td class="paramtype">IReferences&#160;</td>
           <td class="paramname"><em>references</em></td><td>)</td>
@@ -387,7 +387,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.Stats </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.Stats </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -415,7 +415,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#ae46bf1d70f072c3aa37f4e4a0d1dc4d1">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#ae46bf1d70f072c3aa37f4e4a0d1dc4d1">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>
@@ -426,7 +426,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.Timestamp </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.Timestamp </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -454,7 +454,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#af9bf33b4ebbe363810180f9a343b1100">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#af9bf33b4ebbe363810180f9a343b1100">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>
@@ -465,7 +465,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void PipServices.Components.Count.CompositeCounters.TimestampNow </td>
+          <td class="memname">void PipServices3.Components.Count.CompositeCounters.TimestampNow </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -482,7 +482,7 @@ readonly List&lt; <a class="el" href="interface_pip_services_1_1_components_1_1_
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a31e44c0713a9c9d9639b4a8f26e185f1">PipServices.Components.Count.ICounters</a>.</p>
+<p>Implements <a class="el" href="interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html#a31e44c0713a9c9d9639b4a8f26e185f1">PipServices3.Components.Count.ICounters</a>.</p>
 
 </div>
 </div>

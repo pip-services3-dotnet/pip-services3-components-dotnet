@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using PipServices.Components.Cache;
-using PipServices.Commons.Config;
-using PipServices.Components.Count;
-using PipServices.Components.Log;
-using PipServices.Commons.Refer;
+using PipServices3.Components.Cache;
+using PipServices3.Commons.Config;
+using PipServices3.Components.Count;
+using PipServices3.Components.Log;
+using PipServices3.Commons.Refer;
 
-namespace PipServices.Components.Logic
+namespace PipServices3.Components.Logic
 {
     public abstract class AbstractController : IConfigurable, IReferenceable
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using Xunit;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     public sealed class CountersFixture
     {

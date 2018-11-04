@@ -1,4 +1,4 @@
-﻿namespace PipServices.Components.Count
+﻿namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Types of counters that measure different types of metrics

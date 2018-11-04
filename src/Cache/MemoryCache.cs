@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Config;
+﻿using PipServices3.Commons.Config;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     /// <summary>
     /// Cache that stores values in the process memory.

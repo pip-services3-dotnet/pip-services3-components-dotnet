@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using PipServices.Commons.Config;
-using PipServices.Commons.Data;
-using PipServices.Components.Connect;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Data;
+using PipServices3.Components.Connect;
 
-namespace PipServices.Components.Auth
+namespace PipServices3.Components.Auth
 {
     /// <summary>
     /// Contains credentials to authenticate against external services.
@@ -37,8 +37,8 @@ namespace PipServices.Components.Auth
     /// var pin = credential.GetAsNullableString("pin");     // Result: 321 
     /// </code>
     /// </example>
-    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
-    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, 
+    /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
+    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, 
     /// <see cref="CredentialResolver"/>, <see cref="ICredentialStore"/>
     public class CredentialParams : ConfigParams
     {

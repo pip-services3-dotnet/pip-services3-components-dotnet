@@ -1,10 +1,10 @@
 ﻿using System;
-using PipServices.Commons.Config;
-using PipServices.Components.Count;
-using PipServices.Components.Log;
-using PipServices.Commons.Refer;
+using PipServices3.Commons.Config;
+using PipServices3.Components.Count;
+using PipServices3.Components.Log;
+using PipServices3.Commons.Refer;
 
-namespace PipServices.Components
+namespace PipServices3.Components
 {
     /// <summary>
     /// Abstract component that supportes configurable dependencies, logging and performance counters.
@@ -18,8 +18,8 @@ namespace PipServices.Components
     /// 
     /// ### References ###
     /// 
-    /// - *:counters:*:*:1.0       (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html">ICounters</a> components to pass collected measurements
-    /// - *:logger:*:*:1.0         (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to pass log messages 
+    /// - *:counters:*:*:1.0       (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html">ICounters</a> components to pass collected measurements
+    /// - *:logger:*:*:1.0         (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to pass log messages 
     /// - ...                      References must match configured dependencies.
     /// </summary>
     public class Component: IConfigurable, IReferenceable

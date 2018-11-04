@@ -1,9 +1,9 @@
-﻿using PipServices.Commons.Config;
-using PipServices.Commons.Refer;
+﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Refer;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Components.Auth
+namespace PipServices3.Components.Auth
 {
     /// <summary>
     /// Credential store that keeps credentials in memory.

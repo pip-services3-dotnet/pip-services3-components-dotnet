@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Callback object returned by <see cref="ICounters.BeginTiming(string)"/> to end timing

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using PipServices.Commons.Errors;
+using PipServices3.Commons.Errors;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Data object to store captured log messages. This object is used by CachedLogger.

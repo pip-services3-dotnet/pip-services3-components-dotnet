@@ -1,21 +1,21 @@
 ﻿using System.Collections.Generic;
-using PipServices.Commons.Config;
-using PipServices.Commons.Refer;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Refer;
 using System.Threading.Tasks;
 
-namespace PipServices.Components.Auth
+namespace PipServices3.Components.Auth
 {
     /// <summary>
     /// Helper class to retrieve component credentials.
     /// 
-    /// If credentials are configured to be retrieved from <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_auth_1_1_i_credential_store.html">ICredentialStore</a>,
-    /// it automatically locates <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_auth_1_1_i_credential_store.html">ICredentialStore</a> in component references
+    /// If credentials are configured to be retrieved from <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_auth_1_1_i_credential_store.html">ICredentialStore</a>,
+    /// it automatically locates <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_auth_1_1_i_credential_store.html">ICredentialStore</a> in component references
     /// and retrieve credentials from there using <c>store_key</c> parameter.
     /// 
     /// ### Configuration parameters ###
     /// 
     /// credential:
-    /// - store_key:                   (optional) a key to retrieve the credentials from <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_auth_1_1_i_credential_store.html">ICredentialStore</a>
+    /// - store_key:                   (optional) a key to retrieve the credentials from <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_auth_1_1_i_credential_store.html">ICredentialStore</a>
     /// - ...                          other credential parameters
     /// 
     /// credentials:                   alternative to credential

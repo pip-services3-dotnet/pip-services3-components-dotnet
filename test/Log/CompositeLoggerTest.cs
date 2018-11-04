@@ -1,7 +1,7 @@
-﻿using PipServices.Commons.Refer;
+﻿using PipServices3.Commons.Refer;
 using Xunit;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     //[TestClass]
     public sealed class CompositeLoggerTest

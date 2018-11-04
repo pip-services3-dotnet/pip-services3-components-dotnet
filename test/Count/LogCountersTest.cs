@@ -1,9 +1,9 @@
-﻿using PipServices.Components.Log;
-using PipServices.Commons.Config;
-using PipServices.Commons.Refer;
+﻿using PipServices3.Components.Log;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Refer;
 using Xunit;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     //[TestClass]
     public sealed class LogCountersTest

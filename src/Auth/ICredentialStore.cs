@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using PipServices.Components.Connect;
+using PipServices3.Components.Connect;
 
-namespace PipServices.Components.Auth
+namespace PipServices3.Components.Auth
 {
     /// <summary>
     /// Interface for credential stores which are used to store and lookup credentials

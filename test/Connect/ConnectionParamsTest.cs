@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace PipServices.Components.Connect
+namespace PipServices3.Components.Connect
 {
     //[TestClass]
     public sealed class ConnectionParamsTest

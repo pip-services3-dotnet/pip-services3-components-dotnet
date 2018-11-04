@@ -1,6 +1,6 @@
-﻿using PipServices.Commons.Config;
+﻿using PipServices3.Commons.Config;
 
-namespace PipServices.Components.Config
+namespace PipServices3.Components.Config
 {
     /// <summary>
     /// Interface for configuration readers that retrieve configuration from various sources

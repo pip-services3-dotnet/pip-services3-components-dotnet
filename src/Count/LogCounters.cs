@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PipServices.Commons.Convert;
-using PipServices.Components.Log;
-using PipServices.Commons.Refer;
+using PipServices3.Commons.Convert;
+using PipServices3.Components.Log;
+using PipServices3.Commons.Refer;
 
-namespace PipServices.Components.Count
+namespace PipServices3.Components.Count
 {
     /// <summary>
     /// Performance counters that periodically dumps counters measurements to logger.
@@ -18,14 +18,14 @@ namespace PipServices.Components.Count
     /// 
     /// ### References ###
     /// 
-    /// - *:logger:*:*:1.0           <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to dump the captured counters
-    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
+    /// - *:logger:*:*:1.0           <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to dump the captured counters
+    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
     /// </summary>
     /// <example>
     /// <code>
     /// var counters = new LogCounters();
     /// counters.SetReferences(References.fromTuples(
-    /// new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger()
+    /// new Descriptor("pip-services3", "logger", "console", "default", "1.0"), new ConsoleLogger()
     /// ));
     /// 
     /// counters.Increment("mycomponent.mymethod.calls");

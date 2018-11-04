@@ -1,5 +1,5 @@
 ﻿using System;
-namespace PipServices.Components.Lock
+namespace PipServices3.Components.Lock
 {
     /// <summary>
     /// Dummy lock implementation that doesn't do anything.

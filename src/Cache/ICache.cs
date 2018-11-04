@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace PipServices.Components.Cache
+namespace PipServices3.Components.Cache
 {
     /// <summary>
     /// Interface for caches that are used to cache values to improve performance.

@@ -1,7 +1,7 @@
 ﻿using HandlebarsDotNet;
-using PipServices.Commons.Config;
+using PipServices3.Commons.Config;
 
-namespace PipServices.Components.Config
+namespace PipServices3.Components.Config
 {
     /// <summary>
     /// Abstract config reader that supports configuration parameterization.

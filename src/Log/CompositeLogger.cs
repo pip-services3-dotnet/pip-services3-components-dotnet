@@ -1,8 +1,8 @@
 ﻿using System;
-using PipServices.Commons.Refer;
+using PipServices3.Commons.Refer;
 using System.Collections.Generic;
 
-namespace PipServices.Components.Log
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Aggregates all loggers from component references under a single component.

@@ -1,8 +1,8 @@
 ﻿using System;
-using PipServices.Commons.Config;
+using PipServices3.Commons.Config;
 using Xunit;
 
-namespace PipServices.Components.Info
+namespace PipServices3.Components.Info
 {
     public sealed class ContextInfoTest
     {

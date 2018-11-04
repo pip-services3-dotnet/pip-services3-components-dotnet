@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using PipServices.Commons.Config;
-using PipServices.Commons.Data;
-using PipServices.Components.Auth;
+using PipServices3.Commons.Config;
+using PipServices3.Commons.Data;
+using PipServices3.Components.Auth;
 
-namespace PipServices.Components.Connect
+namespace PipServices3.Components.Connect
 {
     /// <summary>
     /// Contains connection parameters to connect to external services.
@@ -36,8 +36,8 @@ namespace PipServices.Components.Connect
     /// var cluster = connection.GetAsNullableString("cluster");     // Result: "mycluster" 
     /// </code>
     /// </example>
-    /// See <a href="https://rawgit.com/pip-services-dotnet/pip-services-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
-    /// <a href="https://rawgit.com/pip-services-dotnet/pip-services-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>, 
+    /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-commons-dotnet/master/doc/api/class_pip_services_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, 
+    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>, 
     /// <see cref="ConnectionResolver"/>, 
     /// <see cref="IDiscovery"/>
     public class ConnectionParams : ConfigParams
