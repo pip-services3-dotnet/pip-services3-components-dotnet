@@ -1,6 +1,6 @@
-# <img src="https://github.com/pip-services3/pip-services3/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Component Definitions for .NET
+# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Component Definitions for .NET
 
-This framework is a part of [Pip.Services](https://github.com/pip-services3/pip-services3) project.
+This framework is a part of [Pip.Services](https://github.com/pip-services/pip-services) project.
 It defines components that can be used to implement non-trivial business logic in applications and services.
 
 The key difference of this framework is a portable implementation across variety of different languages. 
@@ -19,7 +19,7 @@ over most fundamental functions and delivers symmetric implementation that can b
 Quick Links:
 
 * [Downloads](https://github.com/pip-services3-dotnet/pip-services3-components-dotnet/blob/master/doc/Downloads.md)
-* [API Reference](https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/index.html)
+* [API Reference]()
 * [Building and Testing](https://github.com/pip-services3-dotnet/pip-services3-components-dotnet/blob/master/doc/Development.md)
 * [Contributing](https://github.com/pip-services3-dotnet/pip-services3-components-dotnet/blob/master/doc/Development.md/#contrib)
 
