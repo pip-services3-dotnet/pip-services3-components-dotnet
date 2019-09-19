@@ -49,5 +49,18 @@ namespace PipServices3.Components.Auth
             сredential.AccessKey = "key";
             Assert.Equal(сredential.AccessKey, "key");
         }
+        
+        [Fact]
+        public void TestAccessKeyWithAnotherParamName()
+        {
+            var сredential = new CredentialParams();
+            сredential.Add("client_key", "client key");
+
+            Assert.Equal(сredential.AccessKey, "client key");
+            
+            сredential.Add("secret_key", "secret key");
+            сredential.Set("client_key", null);
+            Assert.Equal(сredential.AccessKey, "secret key");
+        }
     }
 }

@@ -117,6 +117,7 @@ namespace PipServices3.Components.Auth
             {
                 var accessKey = GetAsNullableString("access_key");
                 accessKey = accessKey ?? GetAsNullableString("client_key");
+                accessKey = accessKey ?? GetAsNullableString("secret_key");
                 return accessKey;
             }
             set { this["access_key"] = value; }

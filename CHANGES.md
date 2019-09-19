@@ -1,5 +1,10 @@
 # Component Definitions for Pip.Services in .NET Changelog
 
+## <a name="3.0.5"></a> 3.0.5 (2019-09-19)
+
+### Features
+* Extended possible param name list of AccessKey in CredentialParams
+
 ## <a name="3.0.3"></a> 3.0.3 (2018-08-23)
 
 ### Breaking Changes
