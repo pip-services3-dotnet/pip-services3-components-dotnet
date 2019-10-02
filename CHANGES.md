@@ -1,11 +1,13 @@
 # Component Definitions for Pip.Services in .NET Changelog
 
-## <a name="3.0.5"></a> 3.0.5 (2019-09-19)
+## <a name="3.0.0-3.0.6"></a> 3.0.0-3.0.6 (2018-10-02)
+
+### Bug Fixes
+* Replaced "Environment.TickCount" by "DateTime.UtcNow.Ticks"
+* Fixed ObjectMapper for collections
 
 ### Features
 * Extended possible param name list of AccessKey in CredentialParams
-
-## <a name="3.0.3"></a> 3.0.3 (2018-08-23)
 
 ### Breaking Changes
 * Moved to a separate package

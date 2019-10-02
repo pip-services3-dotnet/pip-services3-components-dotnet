@@ -27,7 +27,7 @@ namespace PipServices3.Components.Log
     {
         protected List<LogMessage> _cache = new List<LogMessage>();
         protected bool _updated = false;
-        protected long _lastDumpTime = Environment.TickCount;
+        protected long _lastDumpTime = DateTime.UtcNow.Ticks;
         protected int _maxCacheSize = 100;
         protected int _interval = 10000;
         protected object _lock = new object();
@@ -130,7 +130,7 @@ namespace PipServices3.Components.Log
                 finally
                 {
                     _updated = false;
-                    _lastDumpTime = Environment.TickCount;
+                    _lastDumpTime = DateTime.UtcNow.Ticks;
                 }
             }
         }
@@ -143,9 +143,9 @@ namespace PipServices3.Components.Log
         {
             _updated = true;
 
-            var now = Environment.TickCount;
+            var now = DateTime.UtcNow.Ticks;
 
-            if (now > _lastDumpTime + _interval)
+            if (now > _lastDumpTime + TimeSpan.FromMilliseconds(_interval).Ticks)
             {
                 try
                 {

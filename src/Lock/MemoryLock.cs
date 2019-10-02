@@ -41,7 +41,7 @@ namespace PipServices3.Components.Lock
         /// <returns>a lock result</returns>
         public override bool TryAcquireLock(string correlationId, string key, long ttl)
         {
-            var now = Environment.TickCount;
+            var now = DateTime.UtcNow.Ticks;
 
             lock (_locks)
             {
@@ -52,7 +52,7 @@ namespace PipServices3.Components.Lock
                     if (expireTime > now) return false;
                 }
 
-                expireTime = now + ttl;
+                expireTime = now + TimeSpan.FromMilliseconds(ttl).Ticks;
                 _locks[key] = expireTime;
             }
 

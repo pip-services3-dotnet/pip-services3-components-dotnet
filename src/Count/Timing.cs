@@ -18,7 +18,7 @@ namespace PipServices3.Components.Count
     /// </example>
     public class Timing : IDisposable
     {
-        private readonly int _start;
+        private readonly long _start;
         private readonly ITimingCallback _callback;
         private readonly string _counter;
 
@@ -36,7 +36,7 @@ namespace PipServices3.Components.Count
         {
             _counter = counter;
             _callback = callback;
-            _start = Environment.TickCount;
+            _start = DateTime.UtcNow.Ticks;
         }
 
         /// <summary>
@@ -45,11 +45,13 @@ namespace PipServices3.Components.Count
         public void EndTiming()
         {
             if (_callback == null)
+            {
                 return;
+            }
 
-            double elapsed = Environment.TickCount - _start;
+            var elapsed = DateTime.UtcNow.Ticks - _start;
 
-            _callback.EndTiming(_counter, elapsed);
+            _callback.EndTiming(_counter, TimeSpan.FromTicks(elapsed).TotalMilliseconds);
         }
 
         public void Dispose()

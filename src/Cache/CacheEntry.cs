@@ -17,7 +17,7 @@ namespace PipServices3.Components.Cache
         {
             Key = key;
             Value = value;
-            Expiration = Environment.TickCount + timeout;
+            Expiration = DateTime.UtcNow.Ticks + TimeSpan.FromMilliseconds(timeout).Ticks;
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace PipServices3.Components.Cache
         public void SetValue(object value, long timeout)
         {
             Value = value;
-            Expiration = Environment.TickCount + timeout;
+            Expiration = DateTime.UtcNow.Ticks + TimeSpan.FromMilliseconds(timeout).Ticks;
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace PipServices3.Components.Cache
         /// <returns>true if the value already expires and false otherwise.</returns>
         public bool IsExpired()
         {
-            return Expiration < Environment.TickCount;
+            return Expiration < DateTime.UtcNow.Ticks;
         }
     }
 }

@@ -19,8 +19,8 @@ namespace PipServices3.Components.Count
     {
         protected readonly IDictionary<string, Counter> _cache = new Dictionary<string, Counter>();
         protected bool _updated;
-        protected long _lastDumpTime = Environment.TickCount;
-        protected long _lastResetTime = Environment.TickCount;
+        protected long _lastDumpTime = DateTime.UtcNow.Ticks;
+        protected long _lastResetTime = DateTime.UtcNow.Ticks;
         protected readonly object _lock = new object();
         protected long _interval = 300000;
         protected long _resetTimeout = 0;
@@ -80,7 +80,7 @@ namespace PipServices3.Components.Count
             lock(_lock)
             {
                 _updated = false;
-                _lastDumpTime = Environment.TickCount;
+                _lastDumpTime = DateTime.UtcNow.Ticks;
             }
         }
 
@@ -91,7 +91,7 @@ namespace PipServices3.Components.Count
         protected void Update()
         {
             _updated = true;
-            if (Environment.TickCount > _lastDumpTime + _interval)
+            if (DateTime.UtcNow.Ticks > _lastDumpTime + TimeSpan.FromMilliseconds(_interval).Ticks)
             {
                 try
                 {
@@ -108,8 +108,8 @@ namespace PipServices3.Components.Count
         {
             if (_resetTimeout == 0) return;
 
-            var now = Environment.TickCount;
-            if (now - _lastResetTime > _resetTimeout)
+            var now = DateTime.UtcNow.Ticks;
+            if (now - _lastResetTime > TimeSpan.FromMilliseconds(_resetTimeout).Ticks)
             {
                 _cache.Clear();
                 _updated = false;                

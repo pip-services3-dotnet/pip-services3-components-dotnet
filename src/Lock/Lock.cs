@@ -52,7 +52,7 @@ namespace PipServices3.Components.Lock
         /// <param name="timeout">a lock acquisition timeout.</param>
         public void AcquireLock(string correlationId, string key, long ttl, long timeout)
         {
-            var expireTime = Environment.TickCount + timeout;
+            var expireTime = DateTime.UtcNow.Ticks + TimeSpan.FromMilliseconds(timeout).Ticks;
 
             // Repeat until time expires
             do
@@ -64,7 +64,7 @@ namespace PipServices3.Components.Lock
                 // Sleep 
                 Thread.Sleep(_retryTimeout);
 
-            } while (Environment.TickCount < expireTime);
+            } while (DateTime.UtcNow.Ticks < expireTime);
 
             // Throw exception
             throw new ConflictException(

@@ -24,11 +24,13 @@ namespace PipServices3.Components.Config
 
         public ConfigParams ReadConfig(string correlationId, ConfigParams parameters)
         {
-            if (_config != null && Environment.TickCount < _lastRead + Timeout)
+            if (_config != null && DateTime.UtcNow.Ticks < _lastRead + TimeSpan.FromMilliseconds(Timeout).Ticks)
+            {
                 return _config;
+            }
 
             _config = PerformReadConfig(correlationId, parameters);
-            _lastRead = Environment.TickCount;
+            _lastRead = DateTime.UtcNow.Ticks;
 
             return _config;
         }
