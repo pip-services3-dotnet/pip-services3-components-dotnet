@@ -10,13 +10,20 @@ namespace PipServices3.Components.Count
     /// <see cref="NullCounters"/>, <see cref="LogCounters"/>, <see cref="CompositeCounters"/>
     public class DefaultCountersFactory : Factory
     {
-        public static readonly Descriptor Descriptor = new Descriptor("pip-services3", "factory", "counters", "default", "1.0");
-        public static readonly Descriptor NullCountersDescriptor = new Descriptor("pip-services3", "counters", "null", "*", "1.0");
-        public static readonly Descriptor NullCountersDescriptor2 = new Descriptor("pip-services3-commons", "counters", "null", "*", "1.0");
-        public static readonly Descriptor LogCountersDescriptor = new Descriptor("pip-services3", "counters", "log", "*", "1.0");
-        public static readonly Descriptor LogCountersDescriptor2 = new Descriptor("pip-services3-commons", "counters", "log", "*", "1.0");
-        public static readonly Descriptor CompositeCountersDescriptor = new Descriptor("pip-services3", "counters", "composite", "*", "1.0");
-        public static readonly Descriptor CompositeCountersDescriptor2 = new Descriptor("pip-services3-commons", "counters", "composite", "*", "1.0");
+        public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "counters", "default", "1.0");
+        public static readonly Descriptor Descriptor3 = new Descriptor("pip-services3", "factory", "counters", "default", "1.0");
+        public static readonly Descriptor NullCountersDescriptor = new Descriptor("pip-services", "counters", "null", "*", "1.0");
+        public static readonly Descriptor NullCounters3Descriptor = new Descriptor("pip-services3", "counters", "null", "*", "1.0");
+        public static readonly Descriptor NullCountersDescriptor2 = new Descriptor("pip-services-commons", "counters", "null", "*", "1.0");
+        public static readonly Descriptor NullCounters3Descriptor2 = new Descriptor("pip-services3-commons", "counters", "null", "*", "1.0");
+        public static readonly Descriptor LogCountersDescriptor = new Descriptor("pip-services", "counters", "log", "*", "1.0");
+        public static readonly Descriptor LogCounters3Descriptor = new Descriptor("pip-services3", "counters", "log", "*", "1.0");
+        public static readonly Descriptor LogCountersDescriptor2 = new Descriptor("pip-services-commons", "counters", "log", "*", "1.0");
+        public static readonly Descriptor LogCounters3Descriptor2 = new Descriptor("pip-services3-commons", "counters", "log", "*", "1.0");
+        public static readonly Descriptor CompositeCountersDescriptor = new Descriptor("pip-services", "counters", "composite", "*", "1.0");
+        public static readonly Descriptor CompositeCounters3Descriptor = new Descriptor("pip-services3", "counters", "composite", "*", "1.0");
+        public static readonly Descriptor CompositeCountersDescriptor2 = new Descriptor("pip-services-commons", "counters", "composite", "*", "1.0");
+        public static readonly Descriptor CompositeCounters3Descriptor2 = new Descriptor("pip-services3-commons", "counters", "composite", "*", "1.0");
 
         /// <summary>
         /// Create a new instance of the factory.
@@ -24,11 +31,17 @@ namespace PipServices3.Components.Count
         public DefaultCountersFactory()
         {
             RegisterAsType(NullCountersDescriptor, typeof(NullCounters));
+            RegisterAsType(NullCounters3Descriptor, typeof(NullCounters));
             RegisterAsType(NullCountersDescriptor2, typeof(NullCounters));
+            RegisterAsType(NullCounters3Descriptor2, typeof(NullCounters));
             RegisterAsType(LogCountersDescriptor, typeof(LogCounters));
+            RegisterAsType(LogCounters3Descriptor, typeof(LogCounters));
             RegisterAsType(LogCountersDescriptor2, typeof(LogCounters));
+            RegisterAsType(LogCounters3Descriptor2, typeof(LogCounters));
             RegisterAsType(CompositeCountersDescriptor, typeof(CompositeCounters));
+            RegisterAsType(CompositeCounters3Descriptor, typeof(CompositeCounters));
             RegisterAsType(CompositeCountersDescriptor2, typeof(CompositeCounters));
+            RegisterAsType(CompositeCounters3Descriptor2, typeof(CompositeCounters));
 	    }
     }
 }

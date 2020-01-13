@@ -12,9 +12,12 @@ namespace PipServices3.Components.Lock
     /// <see cref="ILock"/>, <see cref="MemoryLock"/>, <see cref="NullLock"/>
     public class DefaultLockFactory: Factory
     {
-        public static readonly Descriptor Descriptor = new Descriptor("pip-services3", "factory", "lock", "default", "1.0");
-        public static readonly Descriptor NullLockDescriptor = new Descriptor("pip-services3", "lock", "null", "*", "1.0");
-        public static readonly Descriptor MemoryLockDescriptor = new Descriptor("pip-services3", "lock", "memory", "*", "1.0");
+        public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "lock", "default", "1.0");
+        public static readonly Descriptor Descriptor3 = new Descriptor("pip-services3", "factory", "lock", "default", "1.0");
+        public static readonly Descriptor NullLockDescriptor = new Descriptor("pip-services", "lock", "null", "*", "1.0");
+        public static readonly Descriptor NullLock3Descriptor = new Descriptor("pip-services3", "lock", "null", "*", "1.0");
+        public static readonly Descriptor MemoryLockDescriptor = new Descriptor("pip-services", "lock", "memory", "*", "1.0");
+        public static readonly Descriptor MemoryLock3Descriptor = new Descriptor("pip-services3", "lock", "memory", "*", "1.0");
 
         /// <summary>
         /// Create a new instance of the factory.
@@ -22,7 +25,9 @@ namespace PipServices3.Components.Lock
         public DefaultLockFactory()
         {
             RegisterAsType(NullLockDescriptor, typeof(NullLock));
+            RegisterAsType(NullLock3Descriptor, typeof(NullLock));
             RegisterAsType(MemoryLockDescriptor, typeof(MemoryLock));
+            RegisterAsType(MemoryLock3Descriptor, typeof(MemoryLock));
         }
     }
 }

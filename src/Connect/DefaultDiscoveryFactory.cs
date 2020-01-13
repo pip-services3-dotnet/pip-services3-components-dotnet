@@ -10,9 +10,12 @@ namespace PipServices3.Components.Connect
     /// <see cref="IDiscovery"/>, <see cref="MemoryDiscovery"/>
     public class DefaultDiscoveryFactory: Factory
     {
-        public static readonly Descriptor Descriptor = new Descriptor("pip-services3", "factory", "discovery", "default", "1.0");
-        public static readonly Descriptor MemoryDiscoveryDescriptor = new Descriptor("pip-services3", "discovery", "memory", "*", "1.0");
-        public static readonly Descriptor MemoryDiscoveryDescriptor2 = new Descriptor("pip-services3-commons", "discovery", "memory", "*", "1.0");
+        public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "discovery", "default", "1.0");
+        public static readonly Descriptor Descriptor3 = new Descriptor("pip-services3", "factory", "discovery", "default", "1.0");
+        public static readonly Descriptor MemoryDiscoveryDescriptor = new Descriptor("pip-services", "discovery", "memory", "*", "1.0");
+        public static readonly Descriptor MemoryDiscovery3Descriptor = new Descriptor("pip-services3", "discovery", "memory", "*", "1.0");
+        public static readonly Descriptor MemoryDiscoveryDescriptor2 = new Descriptor("pip-services-commons", "discovery", "memory", "*", "1.0");
+        public static readonly Descriptor MemoryDiscovery3Descriptor2 = new Descriptor("pip-services3-commons", "discovery", "memory", "*", "1.0");
 
         /// <summary>
         /// Create a new instance of the factory.
@@ -20,7 +23,9 @@ namespace PipServices3.Components.Connect
         public DefaultDiscoveryFactory()
         {
             RegisterAsType(MemoryDiscoveryDescriptor, typeof(MemoryDiscovery));
+            RegisterAsType(MemoryDiscovery3Descriptor, typeof(MemoryDiscovery));
             RegisterAsType(MemoryDiscoveryDescriptor2, typeof(MemoryDiscovery));
+            RegisterAsType(MemoryDiscovery3Descriptor2, typeof(MemoryDiscovery));
 	    }	
     }
 }

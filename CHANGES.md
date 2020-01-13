@@ -1,6 +1,6 @@
 # Component Definitions for Pip.Services in .NET Changelog
 
-## <a name="3.0.0-3.0.6"></a> 3.0.0-3.0.6 (2018-10-02)
+## <a name="3.0.0-3.0.7"></a> 3.0.0-3.0.7 (2020-01-13)
 
 ### Bug Fixes
 * Replaced "Environment.TickCount" by "DateTime.UtcNow.Ticks"
@@ -11,6 +11,7 @@
 
 ### Breaking Changes
 * Moved to a separate package
+* Added 'pip-services' descriptors
 
 ## <a name="2.4.0"></a> 2.4.0 (2018-08-15)
 
