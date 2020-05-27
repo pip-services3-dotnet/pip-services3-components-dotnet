@@ -11,11 +11,11 @@ namespace PipServices3.Components.Info
         {
             var contextInfo = new ContextInfo();
 
-            Assert.Equal(contextInfo.Name, "unknown");
+            Assert.Equal("unknown", contextInfo.Name);
 
             contextInfo.Name = "new name";
 
-            Assert.Equal(contextInfo.Name, "new name");
+            Assert.Equal("new name", contextInfo.Name);
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace PipServices3.Components.Info
             Assert.Null(contextInfo.Description);
 
             contextInfo.Description = "new description";
-            Assert.Equal(contextInfo.Description, "new description");
+            Assert.Equal("new description", contextInfo.Description);
         }
 
         [Fact]
@@ -60,8 +60,8 @@ namespace PipServices3.Components.Info
                 );
 
             var contextInfo = ContextInfo.FromConfig(config);
-            Assert.Equal(contextInfo.Name, "new name");
-            Assert.Equal(contextInfo.Description, "new description");
+            Assert.Equal("new name", contextInfo.Name);
+            Assert.Equal("new description", contextInfo.Description);
         }
     }
 }

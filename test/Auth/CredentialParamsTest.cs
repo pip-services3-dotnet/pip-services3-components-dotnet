@@ -13,7 +13,7 @@ namespace PipServices3.Components.Auth
             Assert.Null(сredential.StoreKey);
 
             сredential.StoreKey = "Store key";
-            Assert.Equal(сredential.StoreKey, "Store key");
+            Assert.Equal("Store key", сredential.StoreKey);
             Assert.True(сredential.UseCredentialStore);
         }
 
@@ -25,7 +25,7 @@ namespace PipServices3.Components.Auth
             Assert.Null(сredential.Username);
 
             сredential.Username = "Kate Negrienko";
-            Assert.Equal(сredential.Username, "Kate Negrienko");
+            Assert.Equal("Kate Negrienko", сredential.Username);
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace PipServices3.Components.Auth
             Assert.Null(сredential.Password);
 
             сredential.Password = "qwerty";
-            Assert.Equal(сredential.Password, "qwerty");
+            Assert.Equal("qwerty", сredential.Password);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace PipServices3.Components.Auth
             Assert.Null(сredential.AccessKey);
 
             сredential.AccessKey = "key";
-            Assert.Equal(сredential.AccessKey, "key");
+            Assert.Equal("key", сredential.AccessKey);
         }
         
         [Fact]
@@ -56,11 +56,11 @@ namespace PipServices3.Components.Auth
             var сredential = new CredentialParams();
             сredential.Add("client_key", "client key");
 
-            Assert.Equal(сredential.AccessKey, "client key");
+            Assert.Equal("client key", сredential.AccessKey);
             
             сredential.Add("secret_key", "secret key");
             сredential.Set("client_key", null);
-            Assert.Equal(сredential.AccessKey, "secret key");
+            Assert.Equal("secret key", сredential.AccessKey);
         }
     }
 }

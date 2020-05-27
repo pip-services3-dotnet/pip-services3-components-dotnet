@@ -28,9 +28,9 @@ namespace PipServices3.Components.Connect
         public void TestConfigure()
         {
             var config = _connectionResolver.GetAll().FirstOrDefault();
-            Assert.Equal(config.Get("protocol"), "http");
-            Assert.Equal(config.Get("host"), "localhost");
-            Assert.Equal(config.Get("port"), "3000");
+            Assert.Equal("http", config.Get("protocol"));
+            Assert.Equal("localhost", config.Get("host"));
+            Assert.Equal("3000", config.Get("port"));
         }
 
         [Fact]
@@ -40,24 +40,24 @@ namespace PipServices3.Components.Connect
             _connectionResolver.RegisterAsync("correlationId", connectionParams).Wait();
             var configList = _connectionResolver.GetAll();
 
-            Assert.Equal(configList.Count(), 1);
+            Assert.Single(configList);
 
             connectionParams.DiscoveryKey = "Discovery key value";
             _connectionResolver.RegisterAsync("correlationId", connectionParams).Wait();
             configList = _connectionResolver.GetAll();
 
-            Assert.Equal(configList.Count(), 2);
+            Assert.Equal(2, configList.Count());
 
             _connectionResolver.RegisterAsync("correlationId", connectionParams).Wait();
             configList = _connectionResolver.GetAll();
             var configFirst = configList.FirstOrDefault();
             var configLast = configList.LastOrDefault();
 
-            Assert.Equal(configList.Count(), 3);
-            Assert.Equal(configFirst.Get("protocol"), "http");
-            Assert.Equal(configFirst.Get("host"), "localhost");
-            Assert.Equal(configFirst.Get("port"), "3000");
-            Assert.Equal(configLast.Get("discovery_key"), "Discovery key value");
+            Assert.Equal(3, configList.Count());
+            Assert.Equal("http", configFirst.Get("protocol"));
+            Assert.Equal("localhost", configFirst.Get("host"));
+            Assert.Equal("3000", configFirst.Get("port"));
+            Assert.Equal("Discovery key value", configLast.Get("discovery_key"));
         }
 
         [Fact]
@@ -65,9 +65,9 @@ namespace PipServices3.Components.Connect
         {
             var connectionParams = _connectionResolver.ResolveAsync("correlationId").Result;
 
-            Assert.Equal(connectionParams.Get("protocol"), "http");
-            Assert.Equal(connectionParams.Get("host"), "localhost");
-            Assert.Equal(connectionParams.Get("port"), "3000");
+            Assert.Equal("http", connectionParams.Get("protocol"));
+            Assert.Equal("localhost", connectionParams.Get("host"));
+            Assert.Equal("3000", connectionParams.Get("port"));
 
             var restConfigDiscovery = ConfigParams.FromTuples(
                 "connection.protocol", "http",

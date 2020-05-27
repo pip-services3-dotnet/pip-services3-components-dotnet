@@ -22,10 +22,10 @@ namespace PipServices3.Components.Auth
             var credentialResolver = new CredentialResolver(RestConfig);
             var config = credentialResolver.GetAll().FirstOrDefault();
 
-            Assert.Equal(config["username"], "Negrienko");
-            Assert.Equal(config["password"], "qwerty");
-            Assert.Equal(config["access_key"], "key");
-            Assert.Equal(config["store_key"], "store key");
+            Assert.Equal("Negrienko", config["username"]);
+            Assert.Equal("qwerty", config["password"]);
+            Assert.Equal("key", config["access_key"]);
+            Assert.Equal("store key", config["store_key"]);
         }
 
         [Fact]
@@ -43,9 +43,9 @@ namespace PipServices3.Components.Auth
             credentialResolver = new CredentialResolver(restConfigWithoutStoreKey);
             credential = credentialResolver.LookupAsync("correlationId").Result;
 
-            Assert.Equal(credential.Get("username"), "Negrienko");
-            Assert.Equal(credential.Get("password"), "qwerty");
-            Assert.Equal(credential.Get("access_key"), "key");
+            Assert.Equal("Negrienko", credential.Get("username"));
+            Assert.Equal("qwerty", credential.Get("password"));
+            Assert.Equal("key", credential.Get("access_key"));
             Assert.Null(credential.Get("store_key"));
 
             credentialResolver = new CredentialResolver(RestConfig);

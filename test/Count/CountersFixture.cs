@@ -27,7 +27,7 @@ namespace PipServices3.Components.Count
 
             counter = _counters.Get("Test.Increment", CounterType.Increment);
             Assert.NotNull(counter);
-            Assert.Equal(counter.Count, 4);
+            Assert.Equal(4, counter.Count);
 
             _counters.TimestampNow("Test.Timestamp");
             _counters.TimestampNow("Test.Timestamp");

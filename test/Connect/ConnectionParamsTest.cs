@@ -13,7 +13,7 @@ namespace PipServices3.Components.Connect
             Assert.Null(connection.DiscoveryKey);
 
             connection.DiscoveryKey = "Discovery key value";
-            Assert.Equal(connection.DiscoveryKey, "Discovery key value");
+            Assert.Equal("Discovery key value", connection.DiscoveryKey);
             Assert.True(connection.UseDiscovery);
         }
 
@@ -22,35 +22,35 @@ namespace PipServices3.Components.Connect
         {
             var connection = new ConnectionParams();
             connection.Protocol = null;
-            Assert.Equal(connection.Protocol, "http");
+            Assert.Equal("http", connection.Protocol);
             Assert.Null(connection.GetProtocol(null));
-            Assert.Equal(connection.GetProtocol("https"), "https");
+            Assert.Equal("https", connection.GetProtocol("https"));
             connection.Protocol = "https";
 
-            Assert.Equal(connection.Protocol, "https");
+            Assert.Equal("https", connection.Protocol);
         }
 
         [Fact]
         public void TestHost()
         {
             var connection = new ConnectionParams();
-            Assert.Equal(connection.Host, "localhost");
+            Assert.Equal("localhost", connection.Host);
 
             connection.Host = null;
-            Assert.Equal(connection.Host, "localhost");
+            Assert.Equal("localhost", connection.Host);
 
             connection.Host = "localhost1";
-            Assert.Equal(connection.Host, "localhost1");
+            Assert.Equal("localhost1", connection.Host);
         }
 
         [Fact]
         public void TestPort()
         {
             var connection = new ConnectionParams();
-            Assert.Equal(connection.Port, 8080);
+            Assert.Equal(8080, connection.Port);
 
             connection.Port = 3000;
-            Assert.Equal(connection.Port, 3000);
+            Assert.Equal(3000, connection.Port);
         }
 
         [Fact]
