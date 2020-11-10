@@ -40,5 +40,17 @@ namespace PipServices3.Components.Lock
         {
             return true;
         }
-    }
+
+        /// <summary>
+        /// Determines whether the lock was set or not.
+        /// It returns immediately a positive or negative result.
+        /// </summary>
+        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
+        /// <param name="key">a unique lock key to acquire.</param>
+        /// <returns>a lock exists result</returns>
+        public bool IsLocked(string correlationId, string key)
+        {
+            return true;
+        }
+}
 }

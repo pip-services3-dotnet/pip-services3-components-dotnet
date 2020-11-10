@@ -1,5 +1,10 @@
 # Component Definitions for Pip.Services in .NET Changelog
 
+## <a name="3.1.2"></a> 3.1.2 (2020-11-10)
+
+### Features
+* Added IsLocked method to Locks
+
 ## <a name="3.1.1"></a> 3.1.1 (2020-06-26)
 
 ### Features

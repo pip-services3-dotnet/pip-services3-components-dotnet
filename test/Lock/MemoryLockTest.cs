@@ -33,5 +33,10 @@ namespace PipServices3.Components.Lock
             _fixture.TestReleaseLock();
         }
 
+        [Fact]
+        public void TestIsLock()
+        {
+            _fixture.TestIsLock();
+        }
     }
 }
