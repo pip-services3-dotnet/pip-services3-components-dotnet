@@ -18,7 +18,7 @@ namespace PipServices3.Components.Lock
         /// <param name="ttl">a lock timeout (time to live) in milliseconds.</param>
         /// <param name="timeout">a lock acquisition timeout.</param>
         public void AcquireLock(string correlationId, string key, long ttl, long timeout)
-        {}
+        { }
 
         /// <summary>
         /// Releases prevously acquired lock by its key.
@@ -26,7 +26,7 @@ namespace PipServices3.Components.Lock
         /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="key">a unique lock key to acquire.</param>
         public void ReleaseLock(string correlationId, string key)
-        {}
+        { }
 
         /// <summary>
         /// Makes a single attempt to acquire a lock by its key.
@@ -40,17 +40,5 @@ namespace PipServices3.Components.Lock
         {
             return true;
         }
-
-        /// <summary>
-        /// Determines whether the lock was set or not.
-        /// It returns immediately a positive or negative result.
-        /// </summary>
-        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
-        /// <param name="key">a unique lock key to acquire.</param>
-        /// <returns>a lock exists result</returns>
-        public bool IsLocked(string correlationId, string key)
-        {
-            return true;
-        }
-}
+    }
 }

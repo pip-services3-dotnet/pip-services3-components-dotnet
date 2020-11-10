@@ -34,14 +34,5 @@ namespace PipServices3.Components.Lock
         /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
         /// <param name="key">a unique lock key to acquire.</param>
         void ReleaseLock(string correlationId, string key);
-
-        /// <summary>
-        /// Determines whether the lock was set or not.
-        /// It returns immediately a positive or negative result.
-        /// </summary>
-        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
-        /// <param name="key">a unique lock key to acquire.</param>
-        /// <returns>a lock exists result</returns>
-        bool IsLocked(string correlationId, string key);
     }
 }

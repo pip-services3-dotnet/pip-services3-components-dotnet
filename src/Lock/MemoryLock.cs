@@ -71,29 +71,5 @@ namespace PipServices3.Components.Lock
                 _locks.Remove(key);
             }
         }
-
-        /// <summary>
-        /// Determines whether the lock was set or not.
-        /// It returns immediately a positive or negative result.
-        /// </summary>
-        /// <param name="correlationId">(optional) transaction id to trace execution through call chain.</param>
-        /// <param name="key">a unique lock key to acquire.</param>
-        /// <returns>a lock exists result</returns>
-        public override bool IsLocked(string correlationId, string key)
-        {
-            var now = DateTime.UtcNow.Ticks;
-
-            lock (_locks)
-            {
-                long expireTime;
-
-                if (_locks.TryGetValue(key, out expireTime))
-                {
-                    if (expireTime > now) return true;
-                }
-            }
-
-            return false;
-        }
     }
 }

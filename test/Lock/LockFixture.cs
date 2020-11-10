@@ -73,25 +73,5 @@ namespace PipServices3.Components.Lock
             // Release the lock for the second time
             _lock.ReleaseLock(null, LOCK3);
         }
-
-        public void TestIsLock()
-        {
-            // Acquire lock for the first time
-            var result = _lock.TryAcquireLock(null, LOCK1, 3000);
-            Assert.True(result);
-
-            // Try to check lock exists
-            result = _lock.IsLocked(null, LOCK1);
-            Assert.True(result);
-
-            // Release the lock
-            _lock.ReleaseLock(null, LOCK1);
-
-            // Try to check lock not exists
-            result = _lock.IsLocked(null, LOCK1);
-            Assert.False(result);
-
-            _lock.ReleaseLock(null, LOCK1);
-        }
     }
 }
