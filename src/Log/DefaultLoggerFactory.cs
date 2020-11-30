@@ -12,25 +12,25 @@ namespace PipServices3.Components.Log
     {
         public static readonly Descriptor Descriptor = new Descriptor("pip-services", "factory", "logger", "default", "1.0");
         public static readonly Descriptor Descriptor3 = new Descriptor("pip-services3", "factory", "logger", "default", "1.0");
-        public static readonly Descriptor NullLoggerDescriptor = new Descriptor("pip-services3", "logger", "null", "*", "1.0");
+        public static readonly Descriptor NullLoggerDescriptor = new Descriptor("pip-services", "logger", "null", "*", "1.0");
         public static readonly Descriptor NullLogger3Descriptor = new Descriptor("pip-services3", "logger", "null", "*", "1.0");
-        public static readonly Descriptor NullLoggerDescriptor2 = new Descriptor("pip-services3-commons", "logger", "null", "*", "1.0");
+        public static readonly Descriptor NullLoggerDescriptor2 = new Descriptor("pip-services-commons", "logger", "null", "*", "1.0");
         public static readonly Descriptor NullLogger3Descriptor2 = new Descriptor("pip-services3-commons", "logger", "null", "*", "1.0");
-        public static readonly Descriptor ConsoleLoggerDescriptor = new Descriptor("pip-services3", "logger", "console", "*", "1.0");
+        public static readonly Descriptor ConsoleLoggerDescriptor = new Descriptor("pip-services", "logger", "console", "*", "1.0");
         public static readonly Descriptor ConsoleLogger3Descriptor = new Descriptor("pip-services3", "logger", "console", "*", "1.0");
-        public static readonly Descriptor ConsoleLoggerDescriptor2 = new Descriptor("pip-services3-commons", "logger", "console", "*", "1.0");
+        public static readonly Descriptor ConsoleLoggerDescriptor2 = new Descriptor("pip-services-commons", "logger", "console", "*", "1.0");
         public static readonly Descriptor ConsoleLogger3Descriptor2 = new Descriptor("pip-services3-commons", "logger", "console", "*", "1.0");
-        public static readonly Descriptor CompositeLoggerDescriptor = new Descriptor("pip-services3", "logger", "composite", "*", "1.0");
+        public static readonly Descriptor CompositeLoggerDescriptor = new Descriptor("pip-services", "logger", "composite", "*", "1.0");
         public static readonly Descriptor CompositeLogger3Descriptor = new Descriptor("pip-services3", "logger", "composite", "*", "1.0");
-        public static readonly Descriptor CompositeLoggerDescriptor2 = new Descriptor("pip-services3-commons", "logger", "composite", "*", "1.0");
+        public static readonly Descriptor CompositeLoggerDescriptor2 = new Descriptor("pip-services-commons", "logger", "composite", "*", "1.0");
         public static readonly Descriptor CompositeLogger3Descriptor2 = new Descriptor("pip-services3-commons", "logger", "composite", "*", "1.0");
-        public static readonly Descriptor DiagnosticsLoggerDescriptor = new Descriptor("pip-services3", "logger", "diagnostics", "*", "1.0");
+        public static readonly Descriptor DiagnosticsLoggerDescriptor = new Descriptor("pip-services", "logger", "diagnostics", "*", "1.0");
         public static readonly Descriptor DiagnosticsLogger3Descriptor = new Descriptor("pip-services3", "logger", "diagnostics", "*", "1.0");
-        public static readonly Descriptor DiagnosticsLoggerDescriptor2 = new Descriptor("pip-services3-commons", "logger", "diagnostics", "*", "1.0");
+        public static readonly Descriptor DiagnosticsLoggerDescriptor2 = new Descriptor("pip-services-commons", "logger", "diagnostics", "*", "1.0");
         public static readonly Descriptor DiagnosticsLogger3Descriptor2 = new Descriptor("pip-services3-commons", "logger", "diagnostics", "*", "1.0");
-        public static readonly Descriptor EventLoggerDescriptor = new Descriptor("pip-services3", "logger", "event", "*", "1.0");
+        public static readonly Descriptor EventLoggerDescriptor = new Descriptor("pip-services", "logger", "event", "*", "1.0");
         public static readonly Descriptor EventLogger3Descriptor = new Descriptor("pip-services3", "logger", "event", "*", "1.0");
-        public static readonly Descriptor EventLoggerDescriptor2 = new Descriptor("pip-services3-commons", "logger", "event", "*", "1.0");
+        public static readonly Descriptor EventLoggerDescriptor2 = new Descriptor("pip-services-commons", "logger", "event", "*", "1.0");
         public static readonly Descriptor EventLogger3Descriptor2 = new Descriptor("pip-services3-commons", "logger", "event", "*", "1.0");
 
         /// <summary>
