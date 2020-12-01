@@ -18,8 +18,8 @@ namespace PipServices3.Components.Count
     /// 
     /// ### References ###
     /// 
-    /// - *:logger:*:*:1.0           <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to dump the captured counters
-    /// - *:context-info:*:*:1.0     (optional) <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
+    /// - *:logger:*:*:1.0           <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to dump the captured counters
+    /// - *:context-info:*:*:1.0     (optional) <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/class_pip_services_1_1_components_1_1_info_1_1_context_info.html">ContextInfo</a> to detect the context id and specify counters source
     /// </summary>
     /// <example>
     /// <code>
