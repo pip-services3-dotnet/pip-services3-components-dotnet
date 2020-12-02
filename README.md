@@ -1,11 +1,8 @@
 # <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Component Definitions for .NET
 
 This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-It defines components that can be used to implement non-trivial business logic in applications and services.
 
-The key difference of this framework is a portable implementation across variety of different languages. 
-Currently it supports Java, .NET, Python, Node.js, Golang. The code provides reasonably thin abstraction layer 
-over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
+The Components module contains standard component definitions that can be used to build applications and services.
 
 The module contains the following packages:
 - **Auth** - credentials parameters and credential stores
@@ -113,22 +110,22 @@ class MyComponent:IConfigurable, IReferenceable, IOpenable
 
   public Task OpenAsync(string correlationId)
   {
-    Task task = Task.Factory.StartNew(() =>
-    {
-      ConnectionParams _connectionParams = new ConnectionParams();
+      Task task = Task.Factory.StartNew(async () =>
+      {
+          ConnectionParams _connectionParams = new ConnectionParams();
 
-      ConnectionParams connection = this._connectionResolver.ResolveAsync(correlationId).Result;
-      CredentialParams credential = this._credentialResolver.LookupAsync(correlationId).Result;
+          ConnectionParams connection = await this._connectionResolver.ResolveAsync(correlationId);
+          CredentialParams credential = await this._credentialResolver.LookupAsync(correlationId);
 
-      string host = connection.Host;
-      int port = connection.Port;
-      string username = credential.Username;
-      string password = credential.Password;
+          string host = connection.Host;
+          int port = connection.Port;
+          string username = credential.Username;
+          string password = credential.Password;
 
-      ...
-    });
+          ...
+      });
 
-  return task;
+      return task;
   }
 }
 
@@ -165,10 +162,10 @@ class MyComponent: IReferenceable
     this._lock = references.GetOneRequired<Lock>(new Descriptor("*", "lock", "*", "*", "1.0"));
   }
 
-  public void MyMethod(string correlationId)
+  public async void MyMethod(string correlationId) 
   {
     // First check cache for result
-    this._cache.RetrieveAsync<string>(correlationId, "mykey");
+    string result = await this._cache.RetrieveAsync<string>(correlationId, "mykey");
 
     // Lock..
     this._lock.AcquireLock(correlationId, "mykey", 1000, 1000);
