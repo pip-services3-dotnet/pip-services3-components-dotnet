@@ -8,8 +8,8 @@ namespace PipServices3.Components.Connect
     /// Interface for discovery services which are used to store and resolve connection parameters
     /// to connect to external services.
     /// </summary>
-    /// See <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, 
-    /// <a href="https://rawgit.com/pip-services3-dotnet/pip-services3-components-dotnet/master/doc/api/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>
+    /// See <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/class_pip_services_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>, 
+    /// <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>
     public interface IDiscovery
     {
         /// <summary>
