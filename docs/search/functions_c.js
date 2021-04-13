@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parameterize',['Parameterize',['../class_pip_services_1_1_components_1_1_config_1_1_config_reader.html#a4755954faaea4a6caa6e4c82c4c83d1c',1,'PipServices3::Components::Config::ConfigReader']]]
+  ['openasync',['OpenAsync',['../class_pip_services3_1_1_components_1_1_cache_1_1_abstract_cache.html#af783f6234eea6ba9d165308332328d86',1,'PipServices3::Components::Cache::AbstractCache']]]
 ];
