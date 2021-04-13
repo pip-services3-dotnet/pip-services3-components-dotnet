@@ -86,9 +86,18 @@ namespace PipServices3.Components.Connect
         /// <summary>
         /// Gets the connection protocol
         /// </summary>
+        /// <returns>the connection protocol or the default value if it's not set.</returns>
+        public string GetProtocol()
+        {
+            return GetAsString("protocol");
+        }
+
+        /// <summary>
+        /// Gets the connection protocol with default value.
+        /// </summary>
         /// <param name="defaultValue">the default protocol</param>
         /// <returns>the connection protocol or the default value if it's not set.</returns>
-        public string GetProtocol(string defaultValue)
+        public string GetProtocolWithDefault(string defaultValue)
         {
             return GetAsStringWithDefault("protocol", defaultValue);
         }
@@ -117,6 +126,25 @@ namespace PipServices3.Components.Connect
         {
             get { return GetAsIntegerWithDefault("port", 8080); }
             set { SetAsObject("port", value); }
+        }
+
+        /// <summary>
+        /// Gets the port number.
+        /// </summary>
+        /// <returns>the port number.</returns>
+        public int GetPort()
+        {
+            return GetAsInteger("port");
+        }
+
+        /// <summary>
+        /// Gets the port number with default value.
+        /// </summary>
+        /// <param name="defaultPort">a default port number.</param>
+        /// <returns>the port number.</returns>
+        public int GetPortWithDefault(int defaultPort)
+        {
+            return GetAsIntegerWithDefault("port", defaultPort);
         }
 
         /// <summary>

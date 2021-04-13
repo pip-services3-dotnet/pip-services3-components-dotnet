@@ -23,8 +23,8 @@ namespace PipServices3.Components.Connect
             var connection = new ConnectionParams();
             connection.Protocol = null;
             Assert.Equal("http", connection.Protocol);
-            Assert.Null(connection.GetProtocol(null));
-            Assert.Equal("https", connection.GetProtocol("https"));
+            Assert.Null(connection.GetProtocol());
+            Assert.Equal("https", connection.GetProtocolWithDefault("https"));
             connection.Protocol = "https";
 
             Assert.Equal("https", connection.Protocol);
