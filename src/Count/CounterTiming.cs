@@ -16,23 +16,23 @@ namespace PipServices3.Components.Count
     /// }
     /// </code>
     /// </example>
-    public class Timing : IDisposable
+    public class CounterTiming : IDisposable
     {
         private readonly long _start;
-        private readonly ITimingCallback _callback;
+        private readonly ICounterTimingCallback _callback;
         private readonly string _counter;
 
         /// <summary>
         /// Creates a new instance of the timing callback object.
         /// </summary>
-        public Timing() { }
+        public CounterTiming() { }
 
         /// <summary>
         /// Creates a new instance of the timing callback object.
         /// </summary>
         /// <param name="counter">an associated counter name</param>
         /// <param name="callback">a callback that shall be called when endTiming is called.</param>
-        public Timing(string counter, ITimingCallback callback)
+        public CounterTiming(string counter, ICounterTimingCallback callback)
         {
             _counter = counter;
             _callback = callback;

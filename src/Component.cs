@@ -3,6 +3,7 @@ using PipServices3.Commons.Config;
 using PipServices3.Components.Count;
 using PipServices3.Components.Log;
 using PipServices3.Commons.Refer;
+using PipServices3.Components.trace;
 
 namespace PipServices3.Components
 {
@@ -20,6 +21,7 @@ namespace PipServices3.Components
     /// 
     /// - *:counters:*:*:1.0       (optional) <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/interface_pip_services_1_1_components_1_1_count_1_1_i_counters.html">ICounters</a> components to pass collected measurements
     /// - *:logger:*:*:1.0         (optional) <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/interface_pip_services_1_1_components_1_1_log_1_1_i_logger.html">ILogger</a> components to pass log messages 
+    /// - *:tracer:*:*:1.0       (optional) <see cref="ITracer"/> components to record traces
     /// - ...                      References must match configured dependencies.
     /// </summary>
     public class Component: IConfigurable, IReferenceable
@@ -27,6 +29,7 @@ namespace PipServices3.Components
         protected DependencyResolver _dependencyResolver = new DependencyResolver();
         protected CompositeLogger _logger = new CompositeLogger();
         protected CompositeCounters _counters = new CompositeCounters();
+        protected CompositeTracer _tracer = new CompositeTracer();
 
         /// <summary>
         /// Configures component by passing configuration parameters.
@@ -47,6 +50,7 @@ namespace PipServices3.Components
             _dependencyResolver.SetReferences(references);
             _logger.SetReferences(references);
             _counters.SetReferences(references);
+            _tracer.SetReferences(references);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace PipServices3.Components.Logic
 
         #region Instrumentation Methods
 
-        protected virtual Timing Instrument(string correlationId, string methodName, string message = "")
+        protected virtual CounterTiming Instrument(string correlationId, string methodName, string message = "")
         {
             _logger.Trace(correlationId, "Executed {0}.{1} {2}", Component, methodName, message);
             return _counters.BeginTiming(Component + "." + methodName + ".exec_time");

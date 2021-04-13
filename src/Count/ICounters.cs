@@ -16,12 +16,12 @@ namespace PipServices3.Components.Count
     {
         /// <summary>
         /// Begins measurement of execution time interval. It returns Timing object which
-        /// has to be called at <see cref="Timing.EndTiming"/> to end the measurement and
+        /// has to be called at <see cref="CounterTiming.EndTiming"/> to end the measurement and
         /// update the counter.
         /// </summary>
         /// <param name="name">a counter name of Interval type.</param>
         /// <returns>a Timing callback object to end timing.</returns>
-        Timing BeginTiming(string name);
+        CounterTiming BeginTiming(string name);
 
         /// <summary>
         /// Calculates min/average/max statistics based on the current and previous values.

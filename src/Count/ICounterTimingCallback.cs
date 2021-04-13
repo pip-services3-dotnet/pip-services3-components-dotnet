@@ -3,8 +3,8 @@
     /// <summary>
     /// Interface for a callback to end measurement of execution elapsed time.
     /// </summary>
-    /// See <see cref="Timing"/>
-    public interface ITimingCallback
+    /// See <see cref="CounterTiming"/>
+    public interface ICounterTimingCallback
     {
         /// <summary>
         /// Ends measurement of execution elapsed time and updates specified counter. 

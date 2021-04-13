@@ -25,7 +25,7 @@ namespace PipServices3.Components.Count
     /// <code>
     /// var counters = new LogCounters();
     /// counters.SetReferences(References.fromTuples(
-    /// new Descriptor("pip-services3", "logger", "console", "default", "1.0"), new ConsoleLogger()
+    ///     new Descriptor("pip-services3", "logger", "console", "default", "1.0"), new ConsoleLogger()
     /// ));
     /// 
     /// counters.Increment("mycomponent.mymethod.calls");

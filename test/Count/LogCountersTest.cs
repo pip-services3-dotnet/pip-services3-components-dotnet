@@ -15,7 +15,7 @@ namespace PipServices3.Components.Count
         {
             var log = new ConsoleLogger();
             var refs = References.FromTuples(
-                DefaultLoggerFactory.ConsoleLoggerDescriptor, log
+                new Descriptor("pip-services", "logger", "null", "default", "1.0"), log
             );
 
             _counters.SetReferences(refs);

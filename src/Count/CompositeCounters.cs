@@ -41,7 +41,7 @@ namespace PipServices3.Components.Count
     /// </code>
     /// </example>
     /// See <see cref="ICounters"/>
-    public class CompositeCounters : ICounters, ITimingCallback, IReferenceable
+    public class CompositeCounters : ICounters, ICounterTimingCallback, IReferenceable
     {
         protected readonly List<ICounters> _counters = new List<ICounters>();
 
@@ -72,14 +72,14 @@ namespace PipServices3.Components.Count
 
         /// <summary>
         /// Begins measurement of execution time interval. It returns Timing object which
-        /// has to be called at <see cref="Timing.EndTiming"/> to end the measurement and
+        /// has to be called at <see cref="CounterTiming.EndTiming"/> to end the measurement and
         /// update the counter.
         /// </summary>
         /// <param name="name">a counter name of Interval type.</param>
         /// <returns>a Timing callback object to end timing.</returns>
-        public Timing BeginTiming(string name)
+        public CounterTiming BeginTiming(string name)
         {
-            return new Timing(name, this);
+            return new CounterTiming(name, this);
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace PipServices3.Components.Count
         {
             foreach (var counter in _counters)
             {
-                var callback = counter as ITimingCallback;
+                var callback = counter as ICounterTimingCallback;
                 if (callback != null)
                     callback.EndTiming(name, elapsed);
             }

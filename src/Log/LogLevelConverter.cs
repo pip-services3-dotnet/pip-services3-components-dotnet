@@ -1,4 +1,6 @@
-﻿namespace PipServices3.Components.Log
+﻿using PipServices3.Commons.Convert;
+
+namespace PipServices3.Components.Log
 {
     /// <summary>
     /// Helper class to convert log level values.
@@ -10,12 +12,13 @@
         /// Converts numbers and strings to standard log level values.
         /// </summary>
         /// <param name="value">a value to be converted</param>
+        ///  <param name="defaultValue">a default value if conversion is not possible</param>
         /// <returns>converted log level</returns>
-        public static LogLevel ToLogLevel(object value)
+        public static LogLevel ToLogLevel(object value, LogLevel defaultValue = LogLevel.Info)
         {
             if (value == null) return LogLevel.Info;
 
-            value = value.ToString().ToUpper();
+            value = StringConverter.ToString(value).ToUpper();
 
             if ("0".Equals(value) || "NOTHING".Equals(value) || "NONE".Equals(value))
                 return LogLevel.None;
@@ -32,7 +35,7 @@
             else if ("6".Equals(value) || "TRACE".Equals(value))
                 return LogLevel.Trace;
             else
-                return LogLevel.Info;
+                return defaultValue;
         }
 
         /// <summary>

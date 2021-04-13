@@ -17,9 +17,9 @@ namespace PipServices3.Components.Log
             Log = new CompositeLogger();
 
             var refs = References.FromTuples(
-                DefaultLoggerFactory.ConsoleLoggerDescriptor, new ConsoleLogger(), 
-                DefaultLoggerFactory.DiagnosticsLoggerDescriptor, new DiagnosticsLogger(),
-                DefaultLoggerFactory.CompositeLoggerDescriptor, Log
+                new Descriptor("pip-services", "logger", "null", "default", "1.0"), new NullLogger(),
+                new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger(),
+                DefaultLoggerFactory.DiagnosticsLoggerDescriptor, new DiagnosticsLogger()
             );
             Log.SetReferences(refs);
 
