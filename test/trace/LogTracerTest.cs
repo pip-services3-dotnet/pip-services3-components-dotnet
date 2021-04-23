@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     public sealed class LogTracerTest
     {

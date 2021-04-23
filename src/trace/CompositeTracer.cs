@@ -4,7 +4,7 @@ using System.Text;
 
 using PipServices3.Commons.Refer;
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     /// <summary>
     /// Aggregates all tracers from component references under a single component.

@@ -6,7 +6,7 @@ using PipServices3.Commons.Refer;
 using PipServices3.Components.Build;
 
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     /// <summary>
     /// Creates <see cref="ITracer"/> components by their descriptors.

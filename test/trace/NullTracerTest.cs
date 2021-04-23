@@ -1,7 +1,7 @@
 ﻿using System;
 using Xunit;
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     public class NullTracerTest
     {

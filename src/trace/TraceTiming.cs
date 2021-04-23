@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     /// <summary>
     /// Timing object returned by {@link ITracer.beginTrace} to end timing

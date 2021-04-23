@@ -3,7 +3,7 @@ using PipServices3.Commons.Config;
 using PipServices3.Components.Count;
 using PipServices3.Components.Log;
 using PipServices3.Commons.Refer;
-using PipServices3.Components.trace;
+using PipServices3.Components.Trace;
 
 namespace PipServices3.Components
 {

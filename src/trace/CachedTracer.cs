@@ -7,7 +7,7 @@ using PipServices3.Commons.Errors;
 using PipServices3.Commons.Refer;
 using PipServices3.Components.Info;
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     /// <summary>
     /// Abstract tracer that caches recorded traces in memory and periodically dumps them.

@@ -6,7 +6,7 @@ using PipServices3.Commons.Config;
 using PipServices3.Commons.Refer;
 using PipServices3.Components.Log;
 
-namespace PipServices3.Components.trace
+namespace PipServices3.Components.Trace
 {
     /// <summary>
     /// Tracer that dumps recorded traces to logger.
