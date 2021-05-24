@@ -16,5 +16,5 @@ var searchData=
   ['interval',['Interval',['../namespace_pip_services3_1_1_components_1_1_count.html#adf2cfa3b875f41f84e347e47c5a73262ad16dd01adf735ed9b87eebff5fc39ce5',1,'PipServices3::Components::Count']]],
   ['isexpired',['IsExpired',['../class_pip_services3_1_1_components_1_1_cache_1_1_cache_entry.html#a0fbda16f8c668e4154fa019e6d12fea8',1,'PipServices3::Components::Cache::CacheEntry']]],
   ['isopen',['IsOpen',['../class_pip_services3_1_1_components_1_1_cache_1_1_abstract_cache.html#a6571ba79fe716bad1a503a5e65f13bcc',1,'PipServices3::Components::Cache::AbstractCache']]],
-  ['itracer',['ITracer',['../interface_pip_services3_1_1_components_1_1trace_1_1_i_tracer.html',1,'PipServices3::Components::trace']]]
+  ['itracer',['ITracer',['../interface_pip_services3_1_1_components_1_1_trace_1_1_i_tracer.html',1,'PipServices3::Components::Trace']]]
 ];

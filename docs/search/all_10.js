@@ -19,5 +19,5 @@ var searchData=
   ['port',['Port',['../class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a5315eb235eda5524d031ef52f0e02e28',1,'PipServices3::Components::Connect::ConnectionParams']]],
   ['properties',['Properties',['../class_pip_services3_1_1_components_1_1_info_1_1_context_info.html#a16749890eb58cebb92dadd7bbff5c33c',1,'PipServices3::Components::Info::ContextInfo']]],
   ['protocol',['Protocol',['../class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a44425b172f3ced66f97bd1fe60702841',1,'PipServices3::Components::Connect::ConnectionParams']]],
-  ['trace',['trace',['../namespace_pip_services3_1_1_components_1_1trace.html',1,'PipServices3::Components']]]
+  ['trace',['Trace',['../namespace_pip_services3_1_1_components_1_1_trace.html',1,'PipServices3::Components']]]
 ];

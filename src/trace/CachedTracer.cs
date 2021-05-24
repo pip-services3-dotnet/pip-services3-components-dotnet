@@ -72,13 +72,13 @@ namespace PipServices3.Components.Trace
             ErrorDescription errorDesc = error != null ? ErrorDescriptionFactory.Create(error) : null;
             OperationTrace trace = new OperationTrace
             {
-                time = DateTime.UtcNow,
-                source = _source,
-                component = component,
-                operation = operation,
-                correlation_id = correlationId,
-                duration = duration,
-                error = errorDesc
+                Time = DateTime.UtcNow,
+                Source = _source,
+                Component = component,
+                Operation = operation,
+                CorrelationId = correlationId,
+                Duration = duration,
+                Error = errorDesc
             };
 
             _cache.Add(trace);

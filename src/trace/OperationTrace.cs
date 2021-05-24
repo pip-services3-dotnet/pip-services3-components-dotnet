@@ -14,38 +14,38 @@ namespace PipServices3.Components.Trace
 		/// <summary>
 		/// The time when operation was executed 
 		/// </summary>
-		public DateTime time;
+		public DateTime Time;
 
 		/// <summary>
 		/// The source (context name)
 		/// </summary>
-		public string source;
+		public string Source;
 
 		/// <summary>
 		/// The name of component
 		/// </summary>
-		public string component;
+		public string Component;
 
 		/// <summary>
 		/// The name of the executed operation
 		/// </summary>
-		public string operation;
+		public string Operation;
 
 		/// <summary>
 		/// The transaction id to trace execution through call chain.
 		/// </summary>
-		public string correlation_id;
+		public string CorrelationId;
 
 		/// <summary>
 		/// The duration of the operation in milliseconds
 		/// </summary>
-		public long duration;
+		public long Duration;
 
 		/// <summary>
 		/// The description of the captured error
 		/// See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_errors_1_1_error_description.html">ErrorDescription</a>, 
 		/// <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_errors_1_1_application_exception.html">ApplicationException </a>
 		/// </summary>
-		public ErrorDescription error;
+		public ErrorDescription Error;
     }
 }

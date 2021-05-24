@@ -6,5 +6,5 @@ var searchData=
   ['logger',['Logger',['../class_pip_services3_1_1_components_1_1_log_1_1_logger.html',1,'PipServices3::Components::Log']]],
   ['loglevelconverter',['LogLevelConverter',['../class_pip_services3_1_1_components_1_1_log_1_1_log_level_converter.html',1,'PipServices3::Components::Log']]],
   ['logmessage',['LogMessage',['../class_pip_services3_1_1_components_1_1_log_1_1_log_message.html',1,'PipServices3::Components::Log']]],
-  ['logtracer',['LogTracer',['../class_pip_services3_1_1_components_1_1trace_1_1_log_tracer.html',1,'PipServices3::Components::trace']]]
+  ['logtracer',['LogTracer',['../class_pip_services3_1_1_components_1_1_trace_1_1_log_tracer.html',1,'PipServices3::Components::Trace']]]
 ];

@@ -11,6 +11,6 @@ var searchData=
   ['loglevel',['LogLevel',['../namespace_pip_services3_1_1_components_1_1_log.html#adb89f7bd72e5200db311b15272d6d5f8',1,'PipServices3::Components::Log']]],
   ['loglevelconverter',['LogLevelConverter',['../class_pip_services3_1_1_components_1_1_log_1_1_log_level_converter.html',1,'PipServices3::Components::Log']]],
   ['logmessage',['LogMessage',['../class_pip_services3_1_1_components_1_1_log_1_1_log_message.html',1,'PipServices3::Components::Log']]],
-  ['logtracer',['LogTracer',['../class_pip_services3_1_1_components_1_1trace_1_1_log_tracer.html',1,'PipServices3::Components::trace']]],
+  ['logtracer',['LogTracer',['../class_pip_services3_1_1_components_1_1_trace_1_1_log_tracer.html',1,'PipServices3::Components::Trace']]],
   ['lookupasync',['LookupAsync',['../class_pip_services3_1_1_components_1_1_auth_1_1_credential_resolver.html#a01512d4aeaaf46eb5a5ed4956328da62',1,'PipServices3.Components.Auth.CredentialResolver.LookupAsync()'],['../interface_pip_services3_1_1_components_1_1_auth_1_1_i_credential_store.html#a3392a5b8042537ce7d8a0df992614959',1,'PipServices3.Components.Auth.ICredentialStore.LookupAsync()'],['../class_pip_services3_1_1_components_1_1_auth_1_1_memory_credential_store.html#aad85ef63f3c89db4c991f7ea76847828',1,'PipServices3.Components.Auth.MemoryCredentialStore.LookupAsync()']]]
 ];

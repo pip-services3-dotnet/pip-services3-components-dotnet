@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['component',['component',['../class_pip_services3_1_1_components_1_1trace_1_1_operation_trace.html#ae3cbba1ebab8b7ba8257fffc25dba729',1,'PipServices3::Components::trace::OperationTrace']]],
-  ['correlation_5fid',['correlation_id',['../class_pip_services3_1_1_components_1_1trace_1_1_operation_trace.html#a76740c65b7f26174c7c039b5045d34c9',1,'PipServices3::Components::trace::OperationTrace']]]
+  ['component',['Component',['../class_pip_services3_1_1_components_1_1_trace_1_1_operation_trace.html#ad3eae0442a372f048fe8107a52c65299',1,'PipServices3::Components::Trace::OperationTrace']]],
+  ['correlationid',['CorrelationId',['../class_pip_services3_1_1_components_1_1_trace_1_1_operation_trace.html#a4ab93642c27ea595c28dbf3ad7225bbb',1,'PipServices3::Components::Trace::OperationTrace']]]
 ];
