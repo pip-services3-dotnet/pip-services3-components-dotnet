@@ -17,10 +17,10 @@ namespace PipServices3.Components.Connect
     /// <example>
     /// <code>
     /// ConfigParams config = ConfigParams.fromTuples(
-    /// "key1.host", "10.1.1.100",
-    /// "key1.port", "8080",
-    /// "key2.host", "10.1.1.100",
-    /// "key2.port", "8082"
+    ///     "key1.host", "10.1.1.100",
+    ///     "key1.port", "8080",
+    ///     "key2.host", "10.1.1.100",
+    ///     "key2.port", "8082"
     /// );
     /// 
     /// MemoryDiscovery discovery = new MemoryDiscovery();
@@ -63,6 +63,11 @@ namespace PipServices3.Components.Connect
             ReadConnections(config);
         }
 
+        /// <summary>
+        /// Reads connections from configuration parameters.
+        /// Each section represents an individual Connectionparams
+        /// </summary>
+        /// <param name="connections">configuration parameters to be read</param>
         private void ReadConnections(ConfigParams connections)
         {
             lock (_lock)

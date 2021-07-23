@@ -25,10 +25,10 @@ namespace PipServices3.Components.Connect
     /// Example ConnectionParams object usage:
     /// 
     /// var connection = ConnectionParams.FromTuples(
-    /// "protocol", "http",
-    /// "host", "10.1.1.100",
-    /// "port", "8080",
-    /// "cluster", "mycluster"
+    ///     "protocol", "http",
+    ///     "host", "10.1.1.100",
+    ///     "port", "8080",
+    ///     "cluster", "mycluster"
     /// );
     /// 
     /// var host = connection.Host;                             // Result: "10.1.1.100"
@@ -166,6 +166,18 @@ namespace PipServices3.Components.Connect
         public new static ConnectionParams FromString(string line)
         {
             var map = StringValueMap.FromString(line);
+            return new ConnectionParams(map);
+        }
+
+        /// <summary>
+        /// Creates a new ConnectionParams object filled with provided key-value pairs called tuples.
+        /// Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
+        /// </summary>
+        /// <param name="tuples">the tuples to fill a new ConnectionParams object.</param>
+        /// <returns>a new ConnectionParams object.</returns>
+        public static new ConnectionParams FromTuples(params object[] tuples)
+        {
+            var map = StringValueMap.FromTuplesArray(tuples);
             return new ConnectionParams(map);
         }
 
