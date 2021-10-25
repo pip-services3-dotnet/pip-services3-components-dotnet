@@ -1,5 +1,16 @@
 # <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Component Definitions for .NET Changelog
 
+## <a name="3.4.0"></a> 3.4.0 (2021-10-26)
+
+Added state management components
+
+### Features
+- Added AddChangeListener and RemoveChangeListener to IConfigReader
+
+* **state** Added IStateStore interface and StateValue class
+* **state** Added NullStateStore class
+* **state** Added MemoryStateStore class
+* **state** Added DefaultStateStoreFactory class
 
 ## <a name="3.3.0"></a> 3.3.0 (2021-08-31)
 

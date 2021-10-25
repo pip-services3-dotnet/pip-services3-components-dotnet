@@ -6,5 +6,6 @@ var searchData=
   ['nullcounters',['NullCounters',['../class_pip_services3_1_1_components_1_1_count_1_1_null_counters.html',1,'PipServices3::Components::Count']]],
   ['nulllock',['NullLock',['../class_pip_services3_1_1_components_1_1_lock_1_1_null_lock.html',1,'PipServices3::Components::Lock']]],
   ['nulllogger',['NullLogger',['../class_pip_services3_1_1_components_1_1_log_1_1_null_logger.html',1,'PipServices3::Components::Log']]],
+  ['nullstatestore',['NullStateStore',['../class_pip_services3_1_1_components_1_1_state_1_1_null_state_store.html',1,'PipServices3::Components::State']]],
   ['nulltracer',['NullTracer',['../class_pip_services3_1_1_components_1_1_trace_1_1_null_tracer.html',1,'PipServices3.Components.Trace.NullTracer'],['../class_pip_services3_1_1_components_1_1_trace_1_1_null_tracer.html#a8073240757f0bb9e970705b73d6423a8',1,'PipServices3.Components.Trace.NullTracer.NullTracer()']]]
 ];

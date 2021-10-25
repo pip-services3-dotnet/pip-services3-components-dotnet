@@ -9,5 +9,6 @@ var searchData=
   ['ifactory',['IFactory',['../interface_pip_services3_1_1_components_1_1_build_1_1_i_factory.html',1,'PipServices3::Components::Build']]],
   ['ilock',['ILock',['../interface_pip_services3_1_1_components_1_1_lock_1_1_i_lock.html',1,'PipServices3::Components::Lock']]],
   ['ilogger',['ILogger',['../interface_pip_services3_1_1_components_1_1_log_1_1_i_logger.html',1,'PipServices3::Components::Log']]],
+  ['istatestore',['IStateStore',['../interface_pip_services3_1_1_components_1_1_state_1_1_i_state_store.html',1,'PipServices3::Components::State']]],
   ['itracer',['ITracer',['../interface_pip_services3_1_1_components_1_1_trace_1_1_i_tracer.html',1,'PipServices3::Components::Trace']]]
 ];

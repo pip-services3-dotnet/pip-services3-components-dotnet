@@ -95,6 +95,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac33a63f8c41716fef3de6a6194dc1815"><td class="memItemLeft" align="right" valign="top">abstract ConfigParams&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pip_services3_1_1_components_1_1_config_1_1_config_reader.html#ac33a63f8c41716fef3de6a6194dc1815">ReadConfig</a> (string correlationId, ConfigParams parameters)</td></tr>
 <tr class="memdesc:ac33a63f8c41716fef3de6a6194dc1815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads configuration and parameterize it with given values.  <a href="#ac33a63f8c41716fef3de6a6194dc1815">More...</a><br /></td></tr>
 <tr class="separator:ac33a63f8c41716fef3de6a6194dc1815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991b634e5960952d55d2eeddf0f38e99"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pip_services3_1_1_components_1_1_config_1_1_config_reader.html#a991b634e5960952d55d2eeddf0f38e99">AddChangeListener</a> (INotifiable listener)</td></tr>
+<tr class="memdesc:a991b634e5960952d55d2eeddf0f38e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a listener that will be notified when configuration is changed  <a href="#a991b634e5960952d55d2eeddf0f38e99">More...</a><br /></td></tr>
+<tr class="separator:a991b634e5960952d55d2eeddf0f38e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1b4527a5fa1335c8453e7ba0c4bc0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pip_services3_1_1_components_1_1_config_1_1_config_reader.html#a8b1b4527a5fa1335c8453e7ba0c4bc0e">removeChangeListener</a> (INotifiable listener)</td></tr>
+<tr class="memdesc:a8b1b4527a5fa1335c8453e7ba0c4bc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a previously added change listener.  <a href="#a8b1b4527a5fa1335c8453e7ba0c4bc0e">More...</a><br /></td></tr>
+<tr class="separator:a8b1b4527a5fa1335c8453e7ba0c4bc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -113,6 +119,42 @@ ConfigParams&#160;</td><td class="memItemRight" valign="bottom"><b>_parameters</
 <p>parameters: this entire section is used as template parameters </p>
 <p>See <a class="el" href="interface_pip_services3_1_1_components_1_1_config_1_1_i_config_reader.html" title="Interface for configuration readers that retrieve configuration from various sources and make it avai...">IConfigReader</a> </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a991b634e5960952d55d2eeddf0f38e99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991b634e5960952d55d2eeddf0f38e99">&#9670;&nbsp;</a></span>AddChangeListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void PipServices3.Components.Config.ConfigReader.AddChangeListener </td>
+          <td>(</td>
+          <td class="paramtype">INotifiable&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a listener that will be notified when configuration is changed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listener</td><td>a listener to be added.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_pip_services3_1_1_components_1_1_config_1_1_i_config_reader.html#a9af0f6674713fbcbb1e1574f4f01f1f6">PipServices3.Components.Config.IConfigReader</a>.</p>
+
+</div>
+</div>
 <a id="a2cfa29c9558e6a7ef25efb15c11703f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2cfa29c9558e6a7ef25efb15c11703f5">&#9670;&nbsp;</a></span>Configure()</h2>
 
@@ -242,6 +284,42 @@ ConfigParams&#160;</td><td class="memItemRight" valign="bottom"><b>_parameters</
 <p>Implements <a class="el" href="interface_pip_services3_1_1_components_1_1_config_1_1_i_config_reader.html#ae68b980acc44097167ed69fe1e9483df">PipServices3.Components.Config.IConfigReader</a>.</p>
 
 <p>Implemented in <a class="el" href="class_pip_services3_1_1_components_1_1_config_1_1_yaml_config_reader.html#a4b7002ce7dbd3b6d6e07c9f17a1d2105">PipServices3.Components.Config.YamlConfigReader</a>, and <a class="el" href="class_pip_services3_1_1_components_1_1_config_1_1_json_config_reader.html#a1068a75a2da8841725fc2f446cb372f8">PipServices3.Components.Config.JsonConfigReader</a>.</p>
+
+</div>
+</div>
+<a id="a8b1b4527a5fa1335c8453e7ba0c4bc0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b1b4527a5fa1335c8453e7ba0c4bc0e">&#9670;&nbsp;</a></span>removeChangeListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void PipServices3.Components.Config.ConfigReader.removeChangeListener </td>
+          <td>(</td>
+          <td class="paramtype">INotifiable&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove a previously added change listener. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listener</td><td>a listener to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_pip_services3_1_1_components_1_1_config_1_1_i_config_reader.html#aa66ece4347d87745ad101b5bc4821cdd">PipServices3.Components.Config.IConfigReader</a>.</p>
 
 </div>
 </div>

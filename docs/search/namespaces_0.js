@@ -12,5 +12,7 @@ var searchData=
   ['log',['Log',['../namespace_pip_services3_1_1_components_1_1_log.html',1,'PipServices3::Components']]],
   ['logic',['Logic',['../namespace_pip_services3_1_1_components_1_1_logic.html',1,'PipServices3::Components']]],
   ['pipservices3',['PipServices3',['../namespace_pip_services3.html',1,'']]],
+  ['state',['State',['../namespace_pip_services3_1_1_components_1_1_state.html',1,'PipServices3::Components']]],
+  ['test',['Test',['../namespace_pip_services3_1_1_components_1_1_test.html',1,'PipServices3::Components']]],
   ['trace',['Trace',['../namespace_pip_services3_1_1_components_1_1_trace.html',1,'PipServices3::Components']]]
 ];

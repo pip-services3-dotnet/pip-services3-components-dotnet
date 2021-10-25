@@ -109,6 +109,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a05dd23852b4e3a1bb418c5dcba8b1ee5"><td class="memItemLeft" align="right" valign="top">static new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a05dd23852b4e3a1bb418c5dcba8b1ee5">FromString</a> (string line)</td></tr>
 <tr class="memdesc:a05dd23852b4e3a1bb418c5dcba8b1ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> object filled with key-value pairs serialized as a string.  <a href="#a05dd23852b4e3a1bb418c5dcba8b1ee5">More...</a><br /></td></tr>
 <tr class="separator:a05dd23852b4e3a1bb418c5dcba8b1ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0ba1fa4f3fbd2f6ff227dac3187256f"><td class="memItemLeft" align="right" valign="top">static new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#ab0ba1fa4f3fbd2f6ff227dac3187256f">FromTuples</a> (params object[] tuples)</td></tr>
+<tr class="memdesc:ab0ba1fa4f3fbd2f6ff227dac3187256f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> object filled with provided key-value pairs called tuples. Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.  <a href="#ab0ba1fa4f3fbd2f6ff227dac3187256f">More...</a><br /></td></tr>
+<tr class="separator:ab0ba1fa4f3fbd2f6ff227dac3187256f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4414ea18b7a4e0412bcd637001df0f76"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a4414ea18b7a4e0412bcd637001df0f76">ManyFromConfig</a> (ConfigParams config, bool configAsDefault=true)</td></tr>
 <tr class="memdesc:a4414ea18b7a4e0412bcd637001df0f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> from configuration parameters from "connections" section.If "connection" section is present instead, than it returns a list with only one <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a>.  <a href="#a4414ea18b7a4e0412bcd637001df0f76">More...</a><br /></td></tr>
 <tr class="separator:a4414ea18b7a4e0412bcd637001df0f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,7 +150,7 @@ Properties</h2></td></tr>
 <li>uri: resource URI or connection string with all parameters in it</li>
 </ul>
 <p>In addition to standard parameters <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> may contain any number of custom parameters </p>
-<div class="fragment"><div class="line">Example <a class="code" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a1472ceca97820f7922ca4866518bce24">ConnectionParams</a> <span class="keywordtype">object</span> usage:</div><div class="line"></div><div class="line">var connection = <a class="code" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a1472ceca97820f7922ca4866518bce24">ConnectionParams</a>.FromTuples(</div><div class="line"><span class="stringliteral">&quot;protocol&quot;</span>, <span class="stringliteral">&quot;http&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;host&quot;</span>, <span class="stringliteral">&quot;10.1.1.100&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;port&quot;</span>, <span class="stringliteral">&quot;8080&quot;</span>,</div><div class="line"><span class="stringliteral">&quot;cluster&quot;</span>, <span class="stringliteral">&quot;mycluster&quot;</span></div><div class="line">);</div><div class="line"></div><div class="line">var host = connection.Host;                             <span class="comment">// Result: &quot;10.1.1.100&quot;</span></div><div class="line">var port = connection.Port;                             <span class="comment">// Result: 8080</span></div><div class="line">var cluster = connection.GetAsNullableString(<span class="stringliteral">&quot;cluster&quot;</span>);     <span class="comment">// Result: &quot;mycluster&quot; </span></div></div><!-- fragment --> <p>See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>, <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_resolver.html" title="Helper class to retrieve component connections. ">ConnectionResolver</a>, <a class="el" href="interface_pip_services3_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a> </p>
+<div class="fragment"><div class="line">Example <a class="code" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a1472ceca97820f7922ca4866518bce24">ConnectionParams</a> <span class="keywordtype">object</span> usage:</div><div class="line"></div><div class="line">var connection = <a class="code" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html#a1472ceca97820f7922ca4866518bce24">ConnectionParams</a>.FromTuples(</div><div class="line">    <span class="stringliteral">&quot;protocol&quot;</span>, <span class="stringliteral">&quot;http&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;host&quot;</span>, <span class="stringliteral">&quot;10.1.1.100&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;port&quot;</span>, <span class="stringliteral">&quot;8080&quot;</span>,</div><div class="line">    <span class="stringliteral">&quot;cluster&quot;</span>, <span class="stringliteral">&quot;mycluster&quot;</span></div><div class="line">);</div><div class="line"></div><div class="line">var host = connection.Host;                             <span class="comment">// Result: &quot;10.1.1.100&quot;</span></div><div class="line">var port = connection.Port;                             <span class="comment">// Result: 8080</span></div><div class="line">var cluster = connection.GetAsNullableString(<span class="stringliteral">&quot;cluster&quot;</span>);     <span class="comment">// Result: &quot;mycluster&quot; </span></div></div><!-- fragment --> <p>See <a href="https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/class_pip_services3_1_1_commons_1_1_config_1_1_config_params.html">ConfigParams</a>, <a href="https://pip-services3-dotnet.github.io/pip-services3-components-dotnet/class_pip_services_1_1_components_1_1_auth_1_1_credential_params.html">CredentialParams</a>, <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_resolver.html" title="Helper class to retrieve component connections. ">ConnectionResolver</a>, <a class="el" href="interface_pip_services3_1_1_components_1_1_connect_1_1_i_discovery.html" title="Interface for discovery services which are used to store and resolve connection parameters to connect...">IDiscovery</a> </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1472ceca97820f7922ca4866518bce24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1472ceca97820f7922ca4866518bce24">&#9670;&nbsp;</a></span>ConnectionParams() <span class="overload">[1/2]</span></h2>
@@ -269,6 +272,41 @@ Properties</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>a string with serialized key-value pairs as "key1=value1;key2=value2;..." Example: "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> object.</dd></dl>
+
+</div>
+</div>
+<a id="ab0ba1fa4f3fbd2f6ff227dac3187256f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ba1fa4f3fbd2f6ff227dac3187256f">&#9670;&nbsp;</a></span>FromTuples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html">ConnectionParams</a> PipServices3.Components.Connect.ConnectionParams.FromTuples </td>
+          <td>(</td>
+          <td class="paramtype">params object []&#160;</td>
+          <td class="paramname"><em>tuples</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> object filled with provided key-value pairs called tuples. Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tuples</td><td>the tuples to fill a new <a class="el" href="class_pip_services3_1_1_components_1_1_connect_1_1_connection_params.html" title="Contains connection parameters to connect to external services. They are used together with credentia...">ConnectionParams</a> object.</td></tr>
   </table>
   </dd>
 </dl>

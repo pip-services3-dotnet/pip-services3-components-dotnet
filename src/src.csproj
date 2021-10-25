@@ -6,7 +6,7 @@
     <RootNamespace>PipServices3.Components</RootNamespace>
     <ApplicationIcon />
     <Win32Resource />
-    <Version>3.3.0</Version>
+    <Version>3.4.0</Version>
     <Authors>Sergey Seroukhov, Volodymyr Tkachenko, Alex Mazur, Andrew Harrington, Alexey Dvoykin, Danyil Tretiakov</Authors>
     <Copyright>Conceptual Vision Consulting LLC. 2017-2021</Copyright>
     <Description>Component definitions for Pip.Services in .NET</Description>
@@ -27,6 +27,6 @@
   <ItemGroup>
     <PackageReference Include="Handlebars.Net" Version="2.0.9" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />
-    <PackageReference Include="PipServices3.Commons" Version="3.3.0" />
+    <PackageReference Include="PipServices3.Commons" Version="3.4.0" />
   </ItemGroup>
 </Project>
