@@ -1,4 +1,5 @@
 ﻿using PipServices3.Commons.Config;
+using PipServices3.Commons.Run;
 
 namespace PipServices3.Components.Config
 {
@@ -19,5 +20,17 @@ namespace PipServices3.Components.Config
         /// <param name="parameters">values to parameters the configuration or null to skip parameterization.</param>
         /// <returns>ConfigParams configuration.</returns>
         ConfigParams ReadConfig(string correlationId, ConfigParams parameters);
+
+        /// <summary>
+        /// Adds a listener that will be notified when configuration is changed
+        /// </summary>
+        /// <param name="listener">a listener to be added.</param>
+        void AddChangeListener(INotifiable listener);
+
+        /// <summary>
+        /// Remove a previously added change listener.
+        /// </summary>
+        /// <param name="listener">a listener to be removed.</param>
+        void removeChangeListener(INotifiable listener);
     }
 }
