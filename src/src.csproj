@@ -27,6 +27,6 @@
   <ItemGroup>
     <PackageReference Include="Handlebars.Net" Version="2.0.9" />
     <PackageReference Include="YamlDotNet" Version="11.2.1" />
-    <PackageReference Include="PipServices3.Commons" Version="3.4.0" />
+    <PackageReference Include="PipServices3.Commons" Version="3.3.0" />
   </ItemGroup>
 </Project>

@@ -74,7 +74,7 @@ namespace PipServices3.Components.Config
         /// Remove a previously added change listener.
         /// </summary>
         /// <param name="listener">a listener to be removed.</param>
-        public virtual void removeChangeListener(INotifiable listener)
+        public virtual void RemoveChangeListener(INotifiable listener)
         {
             // Do nothing...
         }

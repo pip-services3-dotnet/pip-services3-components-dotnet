@@ -31,6 +31,6 @@ namespace PipServices3.Components.Config
         /// Remove a previously added change listener.
         /// </summary>
         /// <param name="listener">a listener to be removed.</param>
-        void removeChangeListener(INotifiable listener);
+        void RemoveChangeListener(INotifiable listener);
     }
 }
