@@ -16,16 +16,16 @@ namespace PipServices3.Components.Connect
     /// </summary>
     /// <example>
     /// <code>
-    /// ConfigParams config = ConfigParams.fromTuples(
-    ///     "key1.host", "10.1.1.100",
-    ///     "key1.port", "8080",
-    ///     "key2.host", "10.1.1.100",
-    ///     "key2.port", "8082"
+    /// ConfigParams config = ConfigParams.FromTuples(
+    ///     "connections.key1.host", "10.1.1.100",
+    ///     "connections.key1.port", "8080",
+    ///     "connections.key2.host", "10.1.1.101",
+    ///     "connections.key2.port", "8082"
     /// );
     /// 
     /// MemoryDiscovery discovery = new MemoryDiscovery();
-    /// discovery.readConnections(config);
-    /// discovery.resolve("123", "key1");
+    /// discovery.Configure(config);
+    /// await discovery.resolveOne("123", "key1");
     /// </code>
     /// </example>
     /// See <see cref="IDiscovery"/>, <see cref="ConnectionParams"/>
@@ -73,14 +73,23 @@ namespace PipServices3.Components.Connect
             lock (_lock)
             {
                 _items.Clear();
-                foreach (var entry in connections)
+                var connects = connections.GetSection("connections");
+
+                if (connections.Count > 0)
                 {
-                    var item = new DiscoveryItem()
+                    var connectionSections = connects.GetSectionNames();
+
+                    foreach (var key in connectionSections)
                     {
-                        Key = entry.Key,
-                        Connection = ConnectionParams.FromString(entry.Value)
-                    };
-                    _items.Add(item);
+                        var config = connects.GetSection(key);
+
+                        var item = new DiscoveryItem()
+                        {
+                            Key = key,
+                            Connection = new ConnectionParams(config)
+                        };
+                        _items.Add(item);
+                    }
                 }
             }
         }
