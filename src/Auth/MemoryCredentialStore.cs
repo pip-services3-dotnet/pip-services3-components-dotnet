@@ -61,14 +61,19 @@ namespace PipServices3.Components.Auth
         /// Reads credentials from configuration parameters.
         /// Each section represents an individual CredentialParams
         /// </summary>
-        /// <param name="credentials">configuration parameters to be read</param>
-        private void ReadCredentials(ConfigParams credentials)
+        /// <param name="config">configuration parameters to be read</param>
+        public void ReadCredentials(ConfigParams config)
         {
             lock (_lock)
             {
                 _items.Clear();
-                foreach (var entry in credentials)
-                    _items[entry.Key] = CredentialParams.FromString(entry.Value);
+                var sections = config.GetSectionNames();
+                foreach (var section in sections)
+                {
+                    var value = config.GetSection(section);
+                    var creadentials = CredentialParams.FromConfig(value);
+                    _items.Add(section, creadentials);
+                }
             }
         }
 
