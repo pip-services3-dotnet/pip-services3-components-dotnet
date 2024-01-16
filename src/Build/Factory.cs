@@ -73,8 +73,16 @@ namespace PipServices3.Components.Build
                 {
                     return TypeReflector.CreateInstanceByType(type);
                 }
-                catch
+                catch (Exception exception)
                 {
+                    Console.WriteLine($"RegisterAsType error: {exception.Message}");
+
+                    while (exception.InnerException != null)
+                    {
+                        Console.WriteLine($"RegisterAsType error: {exception.InnerException.Message}");
+                        exception = exception.InnerException;
+                    }
+                    
                     return null;
                 }
             };
